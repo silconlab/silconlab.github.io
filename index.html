@@ -5,6 +5,7 @@
   <!-- force redeploy -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="naver-site-verification" content="69b8314e202433b6b1112ed798c9ae299568059e" />
   <title>경영컨설팅 전문 | SILCONLAB (실컨)</title>
   <meta name="description" content="조직진단, 성과관리, HR 제도 설계까지 실무형 경영컨설팅을 제공하는 SILCONLAB (실컨)입니다." />
   <meta name="keywords" content="경영컨설팅, 조직진단, HR 제도, 실무형 자문, OKR, KPI, MBO, 실컨, SILCONLAB" />
@@ -15,35 +16,17 @@
   <meta property="og:type" content="website" />
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
       color: #1e2a38;
     }
     header {
       background-color: #2f4f80;
       color: white;
-      padding: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 500;
-    }
-    .cta-button {
-      background-color: #ffffff;
-      color: #2f4f80;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      margin-left: 20px;
+      padding: 2rem;
+      text-align: center;
     }
     main {
       padding: 2rem;
@@ -53,10 +36,12 @@
     section {
       margin-bottom: 3rem;
     }
-    h2 {
+    h1, h2 {
       color: #2f4f80;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
+    }
+    .sub {
+      color: #8a96a8;
+      font-size: 0.95rem;
     }
     .services-grid {
       display: grid;
@@ -73,10 +58,17 @@
       margin-top: 0;
       color: #1e2a38;
     }
-    .clients img {
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      align-items: center;
+      justify-items: center;
+      padding-top: 1rem;
+    }
+    .clients-grid img {
       max-height: 50px;
-      margin: 10px;
-      vertical-align: middle;
+      object-fit: contain;
     }
     footer {
       background-color: #f4f4f4;
@@ -88,99 +80,51 @@
   </style>
 </head>
 <body>
-
-<header>
-  <div><strong>SILCONLAB</strong></div>
-  <nav>
-    <a href="#about">회사소개</a>
-    <a href="#services">서비스</a>
-    <a href="#clients">고객사</a>
-    <a href="#contact">문의하기</a>
-    <a href="https://forms.gle/DVf3hKByimXydo6Y7" target="_blank" class="cta-button">무료 컨설팅 신청</a>
-  </nav>
-</header>
-
-<main>
-  <section id="about">
-    <h2>회사소개</h2>
-    <p>SILCONLAB은 실무 중심의 경영컨설팅 전문 기업으로, SILCONLAB은 실무 중심의 실행 전략을 설계하는 경영 컨설팅 기업입니다. 조직진단, HR 제도 설계, 평가·보상체계 구축 등 다양한 경영컨설팅을 수행하며 복잡한 조직과 관계 흐름을 정밀하게 분석하고, 실행 가능한 전략으로 연결합니다.</p>
-  </section>
-
-  <section id="services">
-    <h2>서비스</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>조직진단 및 조직문화 개선</h3>
-        <p>조직 리텐션, 동기부여, 노사관계까지 아우르는 진단형 자문</p>
+  <header>
+    <h1>SILCONLAB</h1>
+    <p class="sub">실현하는 컨설팅, 실행력 있는 전략 파트너</p>
+  </header>
+  <main>
+    <section id="about">
+      <h2>회사 소개</h2>
+      <p>SILCONLAB은 실무 중심의 경영컨설팅 전문 기업으로, 조직진단, HR 제도 설계, 평가·보상체계 구축 등 다양한 경영컨설팅을 수행하며 복잡한 조직과 관계 흐름을 정밀하게 분석하고, 실행 가능한 전략으로 연결합니다.</p>
+    </section>
+    <section id="services">
+      <h2>주요 서비스</h2>
+      <div class="services-grid">
+        <div class="service-card"><h3>조직진단 및 조직문화 개선</h3><p>조직 리텐션, 동기부여, 노사관계까지 아우르는 진단형 자문</p></div>
+        <div class="service-card"><h3>평가 및 보상제도 설계</h3><p>OKR, MBO, KPI, PIP 등 성과 중심 제도 설계와 보상 플랜 구축</p></div>
+        <div class="service-card"><h3>인재육성 및 법정 교육</h3><p>법정 의무 교육부터 OJT, 리더십 교육까지 실무형 설계</p></div>
+        <div class="service-card"><h3>채용 프로세스 설계 및 개선</h3><p>채용 절차 점검, 자동화, 레퍼런스 체크 등 실행 중심 개선</p></div>
+        <div class="service-card"><h3>HR 제도 및 규정 정비</h3><p>사내 규정, 제도 정비와 정부 지원제도 연계 컨설팅</p></div>
+        <div class="service-card"><h3>맞춤형 컨설팅 사례 제공</h3><p>고객사의 고유한 상황과 문제에 맞춘 맞춤형 컨설팅</p></div>
       </div>
-      <div class="service-card">
-        <h3>평가 및 보상제도 설계</h3>
-        <p>OKR, MBO, KPI, PIP 등 성과 중심 제도 설계와 보상 플랜 구축</p>
+    </section>
+    <section id="clients">
+      <h2>고객사</h2>
+      <div class="clients-grid">
+        <img src="assets/clients/1step.png" alt="1STEP 고객사 로고" />
+        <img src="assets/clients/8meals.png" alt="8MEALS 고객사 로고" />
+        <img src="assets/clients/admin.jpg" alt="ADMIN 고객사 로고" />
+        <img src="assets/clients/eyedentity games.png" alt="Eyedentity Games 고객사 로고" />
+        <img src="assets/clients/path finder8.png" alt="PathFinder8 고객사 로고" />
+        <img src="assets/clients/SKT.png" alt="SKT 고객사 로고" />
+        <img src="assets/clients/tox pressotechnik.png" alt="Tox Pressotechnik 고객사 로고" />
+        <img src="assets/clients/umoment.png" alt="Umoment 고객사 로고" />
+        <img src="assets/clients/vespa.png" alt="Vespa 고객사 로고" />
+        <img src="assets/clients/virnect.png" alt="Virnect 고객사 로고" />
+        <img src="assets/clients/visang.png" alt="Visang 고객사 로고" />
+        <img src="assets/clients/yardin.png" alt="Yardin 고객사 로고" />
+        <img src="assets/clients/misiryeong.png" alt="미시령동서관통도로 고객사 로고" />
+        <img src="assets/clients/shingaegu.png" alt="신개구부산고속도로 고객사 로고" />
+        <img src="assets/clients/tunituni.png" alt="트니트니 고객사 로고" />
       </div>
-      <div class="service-card">
-        <h3>인재육성 및 법정 교육</h3>
-        <p>법정 의무 교육부터 OJT, 리더십 교육까지 실무형 설계</p>
-      </div>
-      <div class="service-card">
-        <h3>채용 프로세스 설계 및 개선</h3>
-        <p>채용 절차 점검, 자동화, 레퍼런스 체크 등 실행 중심 개선</p>
-      </div>
-      <div class="service-card">
-        <h3>HR 제도 및 규정 정비</h3>
-        <p>사내 규정, 제도 정비와 정부 지원제도 연계 컨설팅</p>
-      </div>
-      <div class="service-card">
-        <h3>맞춤형 컨설팅 사례 제공</h3>
-        <p>고객사의 고유한 상황과 문제에 맞춘 맞춤형 컨설팅</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="clients">
-  <h2>고객사</h2>
-  <div class="clients-grid">
-    <img src="assets/clients/1step.png" alt="1STEP 고객사 로고" />
-    <img src="assets/clients/8meals.png" alt="8MEALS 고객사 로고" />
-    <img src="assets/clients/admin.jpg" alt="ADMIN 고객사 로고" />
-    <img src="assets/clients/eyedentity games.png" alt="Eyedentity Games 고객사 로고" />
-    <img src="assets/clients/path finder8.png" alt="PathFinder8 고객사 로고" />
-    <img src="assets/clients/SKT.png" alt="SKT 고객사 로고" />
-    <img src="assets/clients/tox pressotechnik.png" alt="Tox Pressotechnik 고객사 로고" />
-    <img src="assets/clients/umoment.png" alt="Umoment 고객사 로고" />
-    <img src="assets/clients/vespa.png" alt="Vespa 고객사 로고" />
-    <img src="assets/clients/virnect.png" alt="Virnect 고객사 로고" />
-    <img src="assets/clients/visang.png" alt="Visang 고객사 로고" />
-    <img src="assets/clients/yardin.png" alt="Yardin 고객사 로고" />
-    <img src="assets/clients/misiryeong.png" alt="미시령동서관통도로 고객사 로고" />
-    <img src="assets/clients/shingaegu.png" alt="신개구부산고속도로 고객사 로고" />
-    <img src="assets/clients/tunituni.png" alt="트니트니 고객사 로고" />
-  </div>
-</section>
-
-<style>
-.clients-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
-  align-items: center;
-  justify-items: center;
-  padding-top: 1rem;
-}
-.clients-grid img {
-  max-height: 50px;
-  object-fit: contain;
-}
-</style>
-
-  <section id="contact">
-    <h2>문의하기</h2>
-    <p>이메일: <a href="mailto:business@silconlab.com">business@silconlab.com</a></p>
-  </section>
-</main>
-
-<footer>
-  사업자등록번호: 467-87-02968 / 주소: 서울특별시 서초구 마방로6길 13, 4층 4146호 (양재동, 범정빌딩) / © 2025 SILCONLAB. All rights reserved.
-</footer>
-
+    </section>
+    <section id="contact">
+      <h2>문의 및 연락처</h2>
+      <p>이메일: <a href="mailto:business@silconlab.com">business@silconlab.com</a></p>
+      <p>사업자등록번호: 467-87-02968 / 주소: 서울특별시 서초구 마방로6길 13, 4층 4146호 (양재동, 범정빌딩) / © 2025 SILCONLAB. All rights reserved.</p>
+    </section>
+  </main>
 </body>
 </html>
