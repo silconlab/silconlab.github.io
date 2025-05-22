@@ -87,42 +87,41 @@
       font-size: 0.9rem;
     }
   
-.clients-grid {
+.client-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  padding: 2rem 0;
-  max-width: 1000px;
-  margin: auto;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
-.logo-box {
-  aspect-ratio: 3 / 1;
-  background: white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.client-logo {
+  background-color: #f7f9fc;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
-.logo-box img {
-  max-width: 90%;
-  max-height: 80%;
+.client-logo img {
+  max-height: 60px;
   object-fit: contain;
   display: block;
+  margin: 0 auto 0.5rem auto;
+}
+.logo-name {
+  font-size: 0.85rem;
+  color: #333;
 }
 @media (max-width: 1024px) {
-  .clients-grid {
+  .client-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (max-width: 768px) {
-  .clients-grid {
+  .client-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 480px) {
-  .clients-grid {
+  .client-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -173,28 +172,75 @@
 </div>
 </div>
 </section>
-
 <section id="clients">
 <h2>고객사</h2>
-<div class="clients-grid">
-<div class="logo-box"><img alt="1STEP 고객사 로고" src="assets/clients/1step.png"/></div>
-<div class="logo-box"><img alt="8MEALS 고객사 로고" src="assets/clients/8meals.png"/></div>
-<div class="logo-box"><img alt="ADMIN 고객사 로고" src="assets/clients/admin.jpg"/></div>
-<div class="logo-box"><img alt="Eyedentity Games 고객사 로고" src="assets/clients/eyedentity games.png"/></div>
-<div class="logo-box"><img alt="PathFinder8 고객사 로고" src="assets/clients/path finder8.png"/></div>
-<div class="logo-box"><img alt="SKT 고객사 로고" src="assets/clients/SKT.png"/></div>
-<div class="logo-box"><img alt="Tox Pressotechnik 고객사 로고" src="assets/clients/tox pressotechnik.png"/></div>
-<div class="logo-box"><img alt="Umoment 고객사 로고" src="assets/clients/umoment.png"/></div>
-<div class="logo-box"><img alt="Vespa 고객사 로고" src="assets/clients/vespa.png"/></div>
-<div class="logo-box"><img alt="Virnect 고객사 로고" src="assets/clients/virnect.png"/></div>
-<div class="logo-box"><img alt="Visang 고객사 로고" src="assets/clients/visang.png"/></div>
-<div class="logo-box"><img alt="Yardin 고객사 로고" src="assets/clients/yardin.png"/></div>
-<div class="logo-box"><img alt="미시령동서관통도로 고객사 로고" src="assets/clients/misiryeong.png"/></div>
-<div class="logo-box"><img alt="신개구부산고속도로 고객사 로고" src="assets/clients/shingaegu.png"/></div>
-<div class="logo-box"><img alt="트니트니 고객사 로고" src="assets/clients/tunituni.png"/></div>
+<div class="client-grid">
+<div class="client-logo">
+<img alt="원스탭 로고" src="assets/clients/1step.png"/>
+<div class="logo-name">원스탭</div>
+</div>
+<div class="client-logo">
+<img alt="여덟끼니 로고" src="assets/clients/8meal.png"/>
+<div class="logo-name">여덟끼니</div>
+</div>
+<div class="client-logo">
+<img alt="애드민 로고" src="assets/clients/admin.png"/>
+<div class="logo-name">애드민</div>
+</div>
+<div class="client-logo">
+<img alt="아이덴티티게임즈 로고" src="assets/clients/eyedentity.png"/>
+<div class="logo-name">아이덴티티게임즈</div>
+</div>
+<div class="client-logo">
+<img alt="패스파인더8 로고" src="assets/clients/pathfinder.png"/>
+<div class="logo-name">패스파인더8</div>
+</div>
+<div class="client-logo">
+<img alt="SK텔레콤 로고" src="assets/clients/sk.png"/>
+<div class="logo-name">SK텔레콤</div>
+</div>
+<div class="client-logo">
+<img alt="톡스프레스테크닉 로고" src="assets/clients/tox pressotech.png"/>
+<div class="logo-name">톡스프레스테크닉</div>
+</div>
+<div class="client-logo">
+<img alt="유모멘트 로고" src="assets/clients/umoment.png"/>
+<div class="logo-name">유모멘트</div>
+</div>
+<div class="client-logo">
+<img alt="베스파 로고" src="assets/clients/vespa.png"/>
+<div class="logo-name">베스파</div>
+</div>
+<div class="client-logo">
+<img alt="버넥트 로고" src="assets/clients/virnect.png"/>
+<div class="logo-name">버넥트</div>
+</div>
+<div class="client-logo">
+<img alt="비상교육 로고" src="assets/clients/visang.png"/>
+<div class="logo-name">비상교육</div>
+</div>
+<div class="client-logo">
+<img alt="야드인 로고" src="assets/clients/yard.png"/>
+<div class="logo-name">야드인</div>
+</div>
+<div class="client-logo">
+<img alt="미시령동서관통도로(주) 로고" src="assets/clients/misiryeong.png"/>
+<div class="logo-name">미시령동서관통도로(주)</div>
+</div>
+<div class="client-logo">
+<img alt="신대구부산고속도로(주) 로고" src="assets/clients/newdaegubusan.png"/>
+<div class="logo-name">신대구부산고속도로(주)</div>
+</div>
+<div class="client-logo">
+<img alt="트니트니 로고" src="assets/clients/eueu.png"/>
+<div class="logo-name">트니트니</div>
+</div>
+<div class="client-logo">
+<img alt="벨라시스텍 로고" src="assets/clients/bella.png"/>
+<div class="logo-name">벨라시스텍</div>
+</div>
 </div>
 </section>
-
 <section id="contact">
 <h2>문의하기</h2>
 <p>이메일: <a href="mailto:business@silconlab.com">business@silconlab.com</a></p>
