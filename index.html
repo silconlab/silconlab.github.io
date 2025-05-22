@@ -137,9 +137,40 @@
   </section>
 
   <section id="clients">
-    <h2>고객사</h2>
-    <p>(고객사 로고 영역 - 이미지 준비 중)</p>
-  </section>
+  <h2>고객사</h2>
+  <div class="clients-grid">
+    <img src="assets/clients/1step.png" alt="1STEP 고객사 로고" />
+    <img src="assets/clients/8meals.png" alt="8MEALS 고객사 로고" />
+    <img src="assets/clients/admin.jpg" alt="ADMIN 고객사 로고" />
+    <img src="assets/clients/eyedentity games.png" alt="Eyedentity Games 고객사 로고" />
+    <img src="assets/clients/path finder8.png" alt="PathFinder8 고객사 로고" />
+    <img src="assets/clients/SKT.png" alt="SKT 고객사 로고" />
+    <img src="assets/clients/tox pressotechnik.png" alt="Tox Pressotechnik 고객사 로고" />
+    <img src="assets/clients/umoment.png" alt="Umoment 고객사 로고" />
+    <img src="assets/clients/vespa.png" alt="Vespa 고객사 로고" />
+    <img src="assets/clients/virnect.png" alt="Virnect 고객사 로고" />
+    <img src="assets/clients/visang.png" alt="Visang 고객사 로고" />
+    <img src="assets/clients/yardin.png" alt="Yardin 고객사 로고" />
+    <img src="assets/clients/misiryeong.png" alt="미시령동서관통도로 고객사 로고" />
+    <img src="assets/clients/shingaegu.png" alt="신개구부산고속도로 고객사 로고" />
+    <img src="assets/clients/tunituni.png" alt="트니트니 고객사 로고" />
+  </div>
+</section>
+
+<style>
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  padding-top: 1rem;
+}
+.clients-grid img {
+  max-height: 50px;
+  object-fit: contain;
+}
+</style>
 
   <section id="contact">
     <h2>문의하기</h2>
