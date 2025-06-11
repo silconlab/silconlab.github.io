@@ -236,3 +236,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadSections();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".nav-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (toggle && navMenu) {
+    toggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  }
+});
+
+// 스무스 스크롤 + offset 보정 (모바일 메뉴용)
+document.querySelectorAll('.nav-menu a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      const headerOffset = 80;
+      const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // 모바일 메뉴 접힘 처리
+      document.querySelector('.nav-menu').classList.remove('active');
+    }
+  });
+});

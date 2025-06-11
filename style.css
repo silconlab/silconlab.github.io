@@ -54,6 +54,53 @@ header {
     margin: 0 auto;
 }
 
+.preview-case-container {
+  margin-top: 60px;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+}
+.preview-case-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.preview-case-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  flex: 1 1 300px;
+  max-width: 360px;
+  box-sizing: border-box;
+}
+.cta-center {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+.preview-case-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 40px;  /* 세로 32px, 가로 40px */
+  justify-content: center;
+}
+
+.preview-case-card {
+  background: white;
+  padding: 24px 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  flex: 1 1 320px;
+  max-width: 380px;
+  min-height: 220px;
+  box-sizing: border-box;
+  line-height: 1.7;
+}
+
+
 .logo a {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.9em; /* 로고 크기 키움 */
@@ -125,6 +172,13 @@ header {
     transform: translateY(30px); /* JS 애니메이션을 위해 초기 위치 설정 */
     transition: opacity 1s ease-out, transform 1s ease-out; /* 부드러운 전환 시간 증가 */
 }
+
+
+.highlight {
+  font-weight: 700;
+  color: #00B894; /* 민트톤 – 필요 시 브랜드 색상으로 변경 가능 */
+}
+
 
 .section-content.is-visible {
     opacity: 1;
@@ -223,16 +277,18 @@ header {
 }
 
 .section-text-overlay {
-    position: relative;
-    z-index: 10;
-    color: var(--text-light);
-    text-align: center;
-    padding: 40px 60px; /* 패딩 증가 */
-    background-color: rgba(0, 0, 0, 0.75); /* 텍스트 가독성을 위한 배경 불투명도 증가 */
-    border-radius: 12px;
-    max-width: 900px; /* 최대 너비 증가 */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    animation: fadeInScale 1.2s ease-out forwards; /* 애니메이션 시간 증가 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  width: 90%;
 }
 
 @keyframes fadeInScale {
@@ -890,9 +946,19 @@ footer {
     }
 
     .section-text-overlay {
-        padding: 30px 40px;
-        max-width: 95%;
-    }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  width: 90%;
+}
 
     .section-text-overlay p {
         font-size: 1.4em;
@@ -967,8 +1033,19 @@ footer {
     }
 
     .section-text-overlay {
-        padding: 25px 30px;
-    }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  width: 90%;
+}
 
     .section-text-overlay p {
         font-size: 1.1em;
@@ -1055,8 +1132,19 @@ footer {
     }
 
     .section-text-overlay {
-        padding: 20px;
-    }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  width: 90%;
+}
 
     .section-text-overlay p {
         font-size: 0.95em;
@@ -1139,3 +1227,138 @@ footer {
         font-size: 20px;
     }
 }
+
+/* 고객사례 카드 영역 스타일 */
+.preview-case-container {
+  margin-top: 60px;
+  margin-bottom: 80px;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+}
+
+.preview-case-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 40px;
+  justify-content: center;
+}
+
+.preview-case-card {
+  background: white;
+  padding: 24px 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  flex: 1 1 320px;
+  max-width: 380px;
+  min-height: 220px;
+  box-sizing: border-box;
+  line-height: 1.7;
+}
+
+.preview-case-card h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.preview-case-card p {
+  color: #444;
+}
+
+/* CTA 버튼 중앙 정렬 */
+.cta-center {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* section1 메인 배경 이미지 전체화면 + 확대 애니메이션 */
+.section1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('images/main_bg_1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.section1::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 10s ease;
+  z-index: 0;
+}
+
+.section1:hover::before {
+  transform: scale(1.05);
+}
+
+.section-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  width: 90%;
+}
+
+/* section1 슬라이드 이미지 구조 */
+.section1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.section1-backgrounds {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out, transform 20s ease-in-out;
+  transform: scale(1.02);
+}
+
+.bg-img.visible {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.section-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  width: 90%;
+}
+
