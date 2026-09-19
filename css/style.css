@@ -13,11 +13,11 @@
   --color-kakao: #FEE500;          /* Kakao Yellow */
   --color-kakao-text: #191919;
   
-  --color-text-main: #0F172A;      /* Primary text */
-  --color-text-muted: #64748B;     /* Subtext */
+  --color-text-main: #F8FAFC;      /* Primary text */
+  --color-text-muted: #94A3B8;     /* Subtext */
   --color-text-light: #94A3B8;
-  --color-bg-light: #F8FAFC;       /* Soft Gray Background */
-  --color-bg-white: #FFFFFF;
+  --color-bg-light: #0B132B;       /* Soft Gray Background */
+  --color-bg-white: #070D1F;
   --color-border: #E2E8F0;
   --color-border-focus: #93C5FD;
 
@@ -55,8 +55,8 @@ html {
 
 body {
   font-family: var(--font-sans);
-  color: var(--color-text-main);
-  background-color: var(--color-bg-white);
+  color: #F8FAFC;
+  background-color: #070D1F;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -100,8 +100,9 @@ img {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent);
-  background: var(--color-accent-light);
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   padding: 6px 14px;
   border-radius: var(--radius-full);
   margin-bottom: 16px;
@@ -115,17 +116,17 @@ img {
 .section-title {
   font-size: 2.25rem;
   font-weight: 800;
+  color: #FFFFFF;
   line-height: 1.3;
-  color: var(--color-primary);
   margin-bottom: 16px;
-  letter-spacing: -0.02em;
 }
 
 .section-desc {
   font-size: 1.0625rem;
-  color: var(--color-text-muted);
-  line-height: 1.65;
-  word-break: keep-all;
+  color: #94A3B8;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 /* Buttons */
@@ -550,11 +551,28 @@ img {
 }
 
 /* ==========================================================================
-   4. Pain Points Section
+   4. Pain Points Section (Dark Theme)
    ========================================================================== */
 .pain-points-section {
   padding: 100px 0;
-  background-color: #FFFFFF;
+  background: #0B132B;
+  color: #FFFFFF;
+}
+
+.pain-points-section .section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.pain-points-section .section-desc {
+  font-size: 1.0625rem;
+  color: #94A3B8;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 .pain-grid {
@@ -564,42 +582,44 @@ img {
 }
 
 .pain-card {
-  background: var(--color-bg-light);
-  border: 1px solid var(--color-border);
+  background: #0F172A;
+  border: 1px solid #1E293B;
   border-radius: var(--radius-md);
   padding: 36px 28px;
   transition: var(--transition-normal);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .pain-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: #CBD5E1;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-color: #334155;
 }
 
 .pain-icon {
   width: 54px;
   height: 54px;
   border-radius: var(--radius-sm);
-  background: #FEE2E2;
-  color: #DC2626;
+  background: rgba(239, 68, 68, 0.15);
+  color: #F87171;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.375rem;
   margin-bottom: 20px;
+  border: 1px solid rgba(239, 68, 68, 0.25);
 }
 
 .pain-card h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #FFFFFF;
   margin-bottom: 12px;
 }
 
 .pain-card p {
   font-size: 0.9375rem;
-  color: var(--color-text-muted);
+  color: #94A3B8;
   line-height: 1.65;
   word-break: keep-all;
 }
@@ -619,7 +639,8 @@ img {
 }
 
 .service-card {
-  background-color: #FFFFFF;
+  background-color: #0F172A;
+  border-color: #1E293B;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 40px 32px;
@@ -723,11 +744,19 @@ img {
 }
 
 .pricing-section .section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
   color: #FFFFFF;
+  line-height: 1.3;
+  margin-bottom: 16px;
 }
 
 .pricing-section .section-desc {
+  font-size: 1.0625rem;
   color: #94A3B8;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 .pricing-grid {
@@ -1020,11 +1049,28 @@ img {
 }
 
 /* ==========================================================================
-   7. Selected Cases (Tabs)
+   7. Selected Cases (Tabs - Dark Theme)
    ========================================================================== */
 .cases-section {
   padding: 100px 0;
-  background-color: var(--color-bg-light);
+  background: linear-gradient(180deg, #0B132B 0%, #070D1F 100%);
+  color: #FFFFFF;
+}
+
+.cases-section .section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.cases-section .section-desc {
+  font-size: 1.0625rem;
+  color: #94A3B8;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 .case-filters {
@@ -1036,9 +1082,9 @@ img {
 }
 
 .filter-btn {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
+  background: #0F172A;
+  border: 1px solid #334155;
+  color: #94A3B8;
   font-size: 0.9375rem;
   font-weight: 600;
   padding: 10px 20px;
@@ -1048,14 +1094,15 @@ img {
 }
 
 .filter-btn:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: #38BDF8;
+  color: #38BDF8;
 }
 
 .filter-btn.active {
-  background: var(--color-primary);
+  background: #2563EB;
   color: #FFFFFF;
-  border-color: var(--color-primary);
+  border-color: #2563EB;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
 }
 
 .cases-grid {
@@ -1066,24 +1113,27 @@ img {
 }
 
 .case-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
+  background: #0F172A;
+  border: 1px solid #1E293B;
   border-radius: var(--radius-md);
   padding: 32px;
   transition: var(--transition-normal);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 .case-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.5);
+  border-color: #334155;
 }
 
 .case-badge {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #475569;
-  background: #F1F5F9;
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   padding: 4px 10px;
   border-radius: 4px;
   margin-bottom: 12px;
@@ -1092,14 +1142,14 @@ img {
 .case-title {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--color-primary);
+  color: #FFFFFF;
   margin-bottom: 16px;
   line-height: 1.4;
 }
 
 .case-meta, .case-solution {
   font-size: 0.875rem;
-  color: var(--color-text-muted);
+  color: #94A3B8;
   margin-bottom: 8px;
   line-height: 1.6;
 }
@@ -1107,22 +1157,24 @@ img {
 .case-result {
   margin-top: 16px;
   padding-top: 14px;
-  border-top: 1px dashed var(--color-border);
+  border-top: 1px dashed #334155;
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #059669;
+  color: #34D399;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .testimonial-box {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
   color: #FFFFFF;
+  border: 1px solid #334155;
   border-radius: var(--radius-md);
   padding: 40px 48px;
   position: relative;
   text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
 .testimonial-icon {
@@ -1152,7 +1204,8 @@ img {
    ========================================================================== */
 .about-section {
   padding: 100px 0;
-  background-color: #FFFFFF;
+  background: linear-gradient(180deg, #070D1F 0%, #0B132B 100%);
+  color: #FFFFFF;
 }
 
 .about-grid {
@@ -1417,9 +1470,9 @@ img {
   font-size: 0.9375rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  background-color: #F8FAFC;
+  background-color: #1E293B;
   transition: var(--transition-fast);
-  color: var(--color-text-main);
+  color: #F8FAFC;
 }
 
 .form-group input:focus,
@@ -1427,8 +1480,8 @@ img {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--color-accent);
-  background-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background-color: #0F172A;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
 }
 
 .form-privacy {
