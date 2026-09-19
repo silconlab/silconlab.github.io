@@ -261,7 +261,7 @@
             <li><i class="fa-solid fa-circle-check"></i> 대표/경영진 1:1 온라인 결과 피드백 (60분)</li>
             <li><i class="fa-solid fa-circle-check"></i> 즉시 수정 가능한 표준 서식 샘플 제공</li>
           </ul>
-          <a href="#contact" class="btn btn-outline btn-block">진단 신청하기</a>
+          <a href="#contact" class="btn btn-outline btn-block btn-plan-select" data-plan="1-Day 경량 진단" data-title="1-Day 인사·노무 진단 신청" data-btn="1-Day 인사·노무 진단 신청하기" data-placeholder="현재 사업장에서 가장 시급하게 점검받고 싶으신 사항(근로계약서, 취업규칙 적법성, 노무 리스크 등)을 적어주세요.">진단 신청하기</a>
         </div>
 
         <!-- 2. 두 번째 카드 (중앙 강조): 전사 HR 체계 구축·개선 프로젝트 -->
@@ -279,7 +279,7 @@
             <li><i class="fa-solid fa-circle-check"></i> 신입 3개월 퇴사율 감소 온보딩 매뉴얼 구축</li>
             <li><i class="fa-solid fa-circle-check"></i> <strong>현장 안착 코칭 및 사후 3개월 모니터링</strong></li>
           </ul>
-          <a href="#contact" class="btn btn-primary btn-block">상세 견적 및 일정 문의</a>
+          <a href="#contact" class="btn btn-primary btn-block btn-plan-select" data-plan="전사 HR 셋업 패키지" data-title="전사 HR 체계 구축·개선 견적 및 일정 문의" data-btn="상세 견적 및 일정 문의하기" data-placeholder="현재 임직원 규모 및 이번 프로젝트를 통해 구축 또는 개선하고자 하는 주요 영역(직무분장 R&R, 평가보상 체계, 온보딩 등)을 적어주세요.">상세 견적 및 일정 문의</a>
         </div>
 
         <!-- 3. 세 번째 카드: 월 상시 HR 자문 & 실명 평판조회 별도 안내 -->
@@ -483,7 +483,16 @@
         </div>
 
                 <div class="contact-form-box" id="contactFormContainer">
-          <!-- 1. 기본 상담 신청 & 수정 폼 -->
+          <!-- 선택 플랜 하이라이트 배너 -->
+          <div id="planBannerWrap" class="plan-banner-wrap" style="display: none;">
+            <div class="selected-plan-pill">
+              <i class="fa-solid fa-bookmark"></i>
+              <span>선택하신 플랜: <strong id="selectedPlanName">1-Day 인사·노무 진단</strong></span>
+              <button type="button" class="btn-clear-plan" onclick="resetPlanSelection()" title="전체 상담으로 변경">✕ 변경</button>
+            </div>
+          </div>
+
+          <!-- 상담 신청 & 수정 통합 폼 -->
           <form class="contact-form" id="consultationForm" novalidate>
             <div class="form-header-wrap">
               <h3 id="formTitle">15분 무료 사전 미팅 / 견적 신청</h3>
@@ -530,12 +539,12 @@
             </div>
 
             <div class="form-group" id="groupService">
-              <label for="serviceInterest">관심 서비스 영역</label>
+              <label for="serviceInterest">신청 / 문의 서비스 영역 *</label>
               <select id="serviceInterest" name="service">
-                <option value="전체 상담">전체 맞춤 상담 필요</option>
-                <option value="1-Day 경량 진단">1-Day 인사·노무 경량 진단</option>
-                <option value="전사 HR 셋업 패키지">전사 HR 셋업 패키지 (평가/보상/직무)</option>
-                <option value="상시 자문 및 평판조회">월 정기 자문 또는 평판조회</option>
+                <option value="전체 상담">전체 맞춤 상담 필요 (15분 무료 사전 미팅)</option>
+                <option value="1-Day 경량 진단">1-Day 인사·노무 경량 진단 (30~50만 원)</option>
+                <option value="전사 HR 셋업 패키지">전사 HR 체계 구축·개선 프로젝트 (맞춤 프로젝트)</option>
+                <option value="상시 자문 및 평판조회">월 정기 자문 또는 실명 평판조회</option>
               </select>
             </div>
 
@@ -555,44 +564,7 @@
             <p class="form-privacy" id="formPrivacyText">보내주신 정보는 사전 미팅 안내 외 다른 목적으로 사용되지 않습니다.</p>
           </form>
 
-          <!-- 2. 추가 문의 전용 폼 -->
-          <div id="followupFormWrap" style="display: none;">
-            <form class="contact-form" id="followupForm" novalidate>
-              <div class="form-header-wrap">
-                <h3 id="followupFormTitle">추가 문의 및 전달사항 작성</h3>
-                <div class="applicant-summary-badge" id="followupApplicantBadge">
-                  <i class="fa-solid fa-user-check"></i> <span id="followupApplicantText">신청자 정보 연동</span>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="followupCategory">추가 문의 구분 (선택)</label>
-                <select id="followupCategory" name="category">
-                  <option value="서비스 범위 및 세부 견적 문의">서비스 범위 및 세부 견적 문의</option>
-                  <option value="미팅 일정 조율 및 진행 방식">미팅 일정 조율 및 진행 방식</option>
-                  <option value="임원/소장급 평판조회 추가">임원/소장급 평판조회 추가 문의</option>
-                  <option value="기타 요청 및 참고사항 전달">기타 요청 및 참고사항 전달</option>
-                </select>
-              </div>
-
-              <div class="form-group" id="groupFollowupMessage">
-                <label for="followupMessage">추가 문의 / 요청 사항 *</label>
-                <textarea id="followupMessage" name="followupMessage" rows="4" placeholder="추가로 궁금하신 사항이나 대표 컨설턴트에게 전하실 말씀을 적어주세요."></textarea>
-                <span class="field-error-msg" id="errorFollowupMessage"></span>
-              </div>
-
-              <div class="form-submit-group">
-                <button type="submit" id="btnSubmitFollowup" class="btn btn-accent btn-block btn-lg">
-                  <i class="fa-solid fa-plus-circle" id="followupSubmitIcon"></i> <span id="followupSubmitBtnText">추가 문의 전달하기</span>
-                </button>
-                <button type="button" id="btnCancelFollowup" class="btn btn-secondary btn-block">
-                  <i class="fa-solid fa-xmark"></i> 취소하고 접수 결과로 돌아가기
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <!-- 3. 접수 성공 & 신청 내역 카드 뷰 -->
+          <!-- 접수 완료 화면 컨테이너 -->
           <div id="successStateWrap" style="display: none;"></div>
         </div>
       </div>
