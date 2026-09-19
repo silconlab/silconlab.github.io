@@ -160,6 +160,25 @@ function initCaseFilters() {
 /* ==========================================================================
    5. Asynchronous In-Page Form Handler (데이터 백그라운드 자동 수집 & 완료 화면)
    ========================================================================== */
+// Google Apps Script Web App URL (배포 후 아래 따옴표 안에 웹앱 URL을 입력하시면 실시간 시트 적재됩니다)
+const GOOGLE_SHEET_WEBAPP_URL = ""; 
+
+async function sendToGoogleSheets(payload) {
+  if (!GOOGLE_SHEET_WEBAPP_URL) {
+    return;
+  }
+  try {
+    await fetch(GOOGLE_SHEET_WEBAPP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  } catch (err) {
+    console.warn('Google Sheets Webhook Error:', err);
+  }
+}
+
 function initConsultationForm() {
   const primaryForm = document.getElementById('consultationForm');
   const followupForm = document.getElementById('followupForm');
@@ -211,29 +230,38 @@ function initConsultationForm() {
         updatedAt: wasEdit ? nowStr : null
       };
 
-      // Save to storage
-      persistInquiryState();
-      sendToGoogleSheets({
-        type: wasEdit ? '수정반영' : '1차신청',
-        isUpdate: wasEdit,
-        company: inquiryState.primary.company,
-        name: inquiryState.primary.name,
-        employees: inquiryState.primary.employees,
-        phone: inquiryState.primary.phone,
-        email: inquiryState.primary.email,
-        service: inquiryState.primary.service,
-        message: inquiryState.primary.message,
-        submittedAt: inquiryState.primary.submittedAt
-      });
+      try {
+        persistInquiryState();
+        if (typeof sendToGoogleSheets === 'function') {
+          sendToGoogleSheets({
+            type: wasEdit ? '수정반영' : '1차신청',
+            isUpdate: wasEdit,
+            company: inquiryState.primary.company,
+            name: inquiryState.primary.name,
+            employees: inquiryState.primary.employees,
+            phone: inquiryState.primary.phone,
+            email: inquiryState.primary.email,
+            service: inquiryState.primary.service,
+            message: inquiryState.primary.message,
+            submittedAt: inquiryState.primary.submittedAt
+          }).catch(e => console.warn(e));
+        }
+      } catch (err) {
+        console.warn('Persistence error:', err);
+      }
 
-      await new Promise(res => setTimeout(res, 500));
+      await new Promise(res => setTimeout(res, 400));
 
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalText;
       isPrimaryEditMode = false;
 
-      // Render success state
-      renderSuccessState();
+      // Guaranteed render success state
+      if (typeof renderSuccessState === 'function') {
+        renderSuccessState();
+      } else if (typeof window.renderSuccessState === 'function') {
+        window.renderSuccessState();
+      }
     });
   }
 
@@ -260,29 +288,39 @@ function initConsultationForm() {
         updatedAt: wasEdit ? nowStr : null
       };
 
-      persistInquiryState();
-      sendToGoogleSheets({
-        type: '추가문의',
-        isUpdate: wasEdit,
-        company: inquiryState.primary ? inquiryState.primary.company : '',
-        name: inquiryState.primary ? inquiryState.primary.name : '',
-        employees: inquiryState.primary ? inquiryState.primary.employees : '',
-        phone: inquiryState.primary ? inquiryState.primary.phone : '',
-        email: inquiryState.primary ? inquiryState.primary.email : '',
-        service: inquiryState.primary ? inquiryState.primary.service : '',
-        message: inquiryState.primary ? inquiryState.primary.message : '',
-        followupCategory: inquiryState.followup.category,
-        followupMessage: inquiryState.followup.message,
-        submittedAt: inquiryState.followup.submittedAt
-      });
+      try {
+        persistInquiryState();
+        if (typeof sendToGoogleSheets === 'function') {
+          sendToGoogleSheets({
+            type: '추가문의',
+            isUpdate: wasEdit,
+            company: inquiryState.primary ? inquiryState.primary.company : '',
+            name: inquiryState.primary ? inquiryState.primary.name : '',
+            employees: inquiryState.primary ? inquiryState.primary.employees : '',
+            phone: inquiryState.primary ? inquiryState.primary.phone : '',
+            email: inquiryState.primary ? inquiryState.primary.email : '',
+            service: inquiryState.primary ? inquiryState.primary.service : '',
+            message: inquiryState.primary ? inquiryState.primary.message : '',
+            followupCategory: inquiryState.followup.category,
+            followupMessage: inquiryState.followup.message,
+            submittedAt: inquiryState.followup.submittedAt
+          }).catch(e => console.warn(e));
+        }
+      } catch (err) {
+        console.warn('Followup persistence error:', err);
+      }
 
-      await new Promise(res => setTimeout(res, 500));
+      await new Promise(res => setTimeout(res, 400));
 
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalText;
       isFollowupEditMode = false;
 
-      renderSuccessState();
+      if (typeof renderSuccessState === 'function') {
+        renderSuccessState();
+      } else if (typeof window.renderSuccessState === 'function') {
+        window.renderSuccessState();
+      }
     });
   }
 

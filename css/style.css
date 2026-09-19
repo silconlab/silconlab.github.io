@@ -1270,11 +1270,12 @@ img {
 }
 
 .philosophy-card {
-  background: var(--color-primary);
-  color: #FFFFFF;
+  background: #0F172A !important;
+  color: #FFFFFF !important;
+  border: 1px solid #1E293B !important;
   border-radius: var(--radius-lg);
   padding: 40px 32px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .philosophy-card h4 {
@@ -2340,4 +2341,23 @@ img {
 }
 .ceo-info h3 {
   color: #FFFFFF !important;
+}
+
+/* Philosophy Card Dark Overrides */
+.philosophy-card {
+  background: #0F172A !important;
+  border: 1px solid #1E293B !important;
+  color: #FFFFFF !important;
+}
+.philosophy-card h4 {
+  color: #38BDF8 !important;
+}
+.principle-item strong {
+  color: #FFFFFF !important;
+}
+.principle-item p {
+  color: #94A3B8 !important;
+}
+.principle-item .num {
+  color: #38BDF8 !important;
 }
