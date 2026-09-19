@@ -1,112 +1,670 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SILCONLAB - 실현 가능한 실행 컨설팅</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SILCONLAB | 실현 가능한 실행 컨설팅</title>
+  <meta name="description" content="보고서로 끝나지 않는 실행 중심 경영컨설팅 법인 주식회사 실컨. 20년 현장 HR 전문가가 10~80인 기업의 인사·노무, 평가·보상, 조직 체계를 완성합니다.">
+  <meta property="og:title" content="SILCONLAB | 실현 가능한 실행 컨설팅">
+  <meta property="og:description" content="보고서로 끝나지 않는 실행 중심 경영컨설팅. 조직에 뿌리내리는 인사·조직 솔루션을 경험하세요.">
+  <meta property="og:url" content="https://silconlab.com">
+  <meta property="og:type" content="website">
 
-<!-- SEO 기본 설정 -->
-  <meta name="description" content="SILCONLAB은 실행 컨설팅을 통해 기업의 경영 문제를 해결하고, 변화가 조직에 뿌리내리도록 돕는 전략적 파트너입니다. 진단부터 실행까지, 고객의 문제에 진심으로 함께합니다.">
-  <meta name="keywords" content="SILCONLAB, 실콘랩, 실행 컨설팅, 조직 진단, HR 제도, 인사 컨설팅, 채용 전략, 평가 보상, 리더십 코칭, 평판 조회">
-  <meta name="robots" content="index, follow">
+  <!-- Pretendard Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Open Graph (SNS 공유 최적화) -->
-  <meta property="og:title" content="SILCONLAB - 실현 가능한 실행 컨설팅">
-  <meta property="og:description" content="실행이 핵심입니다. SILCONLAB은 '어떻게 할 것인가'를 함께 고민하고 실행합니다.">
-  <meta property="og:image" content="https://www.silconlab.com/images/og_image.jpg">
-  <meta property="og:url" content="https://www.silconlab.com/">
-
-  <!-- Schema.org Organization 구조화 데이터 -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SILCONLAB",
-    "url": "https://www.silconlab.com",
-    "logo": "https://www.silconlab.com/images/logo.png",
-    "description": "전략에서 끝나지 않는 실행 중심 경영·HR 컨설팅 전문 기업",
-    "sameAs": []
-  }
-  </script>
-
-  <!-- SEO 기본 설정 -->
-  <meta name="description" content="SILCONLAB은 실행 컨설팅을 통해 기업의 경영 문제를 해결하고, 변화가 조직에 뿌리내리도록 돕는 전략적 파트너입니다. 진단부터 실행까지, 고객의 문제에 진심으로 함께합니다.">
-  <meta name="keywords" content="SILCONLAB, 실콘랩, 실행 컨설팅, 조직 진단, HR 제도, 인사 컨설팅, 채용 전략, 평가 보상, 리더십 코칭, 평판 조회">
-
-  <!-- 네이버/구글 인증 -->
-  <meta name="naver-site-verification" content="c04d1444f4e4dba58e2a2a0f6f12f9c4e5f2f3d4" />
-  <meta name="google-site-verification" content="3a79b7e87b1d4e72924f2cf892a0a7e1c3ef92aa" />
-
-  <!-- OG 설정 -->
-  <meta property="og:title" content="SILCONLAB - 실현 가능한 실행 컨설팅">
-  <meta property="og:description" content="실행이 핵심입니다. SILCONLAB은 '어떻게 할 것인가'를 함께 고민하고 실행합니다.">
-  <meta property="og:image" content="https://www.silconlab.com/images/og_image.jpg">
-  <meta property="og:url" content="https://www.silconlab.com/">
-
-  <!-- 스타일 및 폰트 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-  <header>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="navbar">
     <div class="header-container">
-      <div class="logo">
-        <a href="#section1">SILCONLAB</a>
-      </div>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="#section2">무엇을 도와드릴까요?</a></li>
-          <li><a href="#section3">SILCONLAB 서비스</a></li>
-          <li><a href="#section4">SILCONLAB은?</a></li>
-          <li><a href="#section5">고객사례</a></li>
-          <li><a href="#section6">SILCONLAB의 방식</a></li>
-          <li><a href="#section7">고객의 목소리</a></li>
-          <li><a href="#contact">문의하기</a></li>
+      <a href="#" class="brand-logo">
+        <div class="logo-symbol">
+          <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="url(#silcon-grad-header)"/>
+            <path d="M12 14.5C12 12.567 13.567 11 15.5 11H25C26.6569 11 28 12.3431 28 14C28 15.6569 26.6569 17 25 17H18C16.8954 17 16 17.8954 16 19C16 20.1046 16.8954 21 18 21H24.5C27.5376 21 30 23.4624 30 26.5C30 29.5376 27.5376 32 24.5 32H15C13.3431 32 12 30.6569 12 29C12 27.3431 13.3431 26 15 26H23.5C24.8807 26 26 24.8807 26 23.5C26 22.1193 24.8807 21 23.5 21H18C14.6863 21 12 18.3137 12 15V14.5Z" fill="white"/>
+            <circle cx="27" cy="14" r="2.5" fill="#38BDF8"/>
+            <defs>
+              <linearGradient id="silcon-grad-header" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2563EB"/>
+                <stop offset="1" stop-color="#0F172A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <div class="logo-main">
+            <span class="logo-silcon">SILCON</span>
+            <span class="logo-pill">LAB</span>
+          </div>
+          <span class="logo-sub">EXECUTIVE ADVISORY</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#services" class="nav-link">서비스 영역</a></li>
+          <li class="nav-item"><a href="#pricing" class="nav-link">서비스 가격</a></li>
+          <li class="nav-item"><a href="#cases" class="nav-link">고객 사례</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">실컨 소개</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">상담 신청</a></li>
         </ul>
       </nav>
-      <div class="hamburger-menu">
-        <i class="fas fa-bars"></i>
+
+      <div class="header-cta">
+        <a href="https://open.kakao.com/o/gtwjWiai" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-kakao">
+          <i class="fa-solid fa-comment"></i> 오픈채팅 상담
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <main id="main-content"></main>
+  <!-- Hero Section with Dynamic Background -->
+  <section class="hero-section" id="hero">
+    <!-- Dynamic Background Layer -->
+    <div class="hero-bg-wrapper">
+      <div class="hero-slide slide-1 active"></div>
+      <div class="hero-slide slide-2"></div>
+      <div class="hero-slide slide-3"></div>
+      <div class="hero-overlay"></div>
+    </div>
 
-  <footer id="contact">
-    <div class="footer-container">
-      <div class="footer-info">
-        <h3>SILCONLAB</h3>
-        <p>실행 중심 경영 컨설팅<br>전략을 넘어, 성과를 함께 만듭니다</p>
-        <p>사업자등록번호: 467-87-02968</p>
-        <p>주소: 서울특별시 서초구 마방로6길 13, 4층 4146호</p>
-        <p>이메일: <a href="mailto:business@silconlab.com">business@silconlab.com</a></p>
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-bolt"></i> 실행 중심 경영컨설팅
       </div>
-
-      <div class="footer-links">
-        <h4>바로가기</h4>
-        <ul>
-          <li><a href="#section2">무엇을 도와드릴까요?</a></li>
-          <li><a href="#section3">SILCONLAB 서비스</a></li>
-          <li><a href="#section4">SILCONLAB은?</a></li>
-          <li><a href="#section5">고객 사례</a></li>
-          <li><a href="#section6">SILCONLAB의 방식</a></li>
-          <li><a href="#section7">고객의 목소리</a></li>
-        </ul>
+      <h1 class="hero-title">
+        실행 가능한 전략이<br>
+        <span class="highlight">곧 기업의 경쟁력</span>입니다
+      </h1>
+      <p class="hero-desc">
+        보고서로만 끝나는 컨설팅이 아닌, 현장에서 바로 작동하고<br>
+        조직에 온전히 뿌리내리는 인사·조직 거버넌스를 설계합니다.
+      </p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-tags"></i> 서비스 플랜 및 가격 보기
+        </a>
+        <a href="#contact" class="btn btn-glass btn-lg">
+          <i class="fa-regular fa-calendar-check"></i> 15분 무료 사전 미팅
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2023 SILCONLAB. All rights reserved.</p>
+
+    <!-- Slide Indicators -->
+    <div class="hero-indicators" id="heroIndicators">
+      <button class="indicator active" data-slide="0" aria-label="1번 슬라이드"></button>
+      <button class="indicator" data-slide="1" aria-label="2번 슬라이드"></button>
+      <button class="indicator" data-slide="2" aria-label="3번 슬라이드"></button>
+    </div>
+  </section>
+
+  <!-- Trust Bar (Social Proof & Core Metrics) -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <div class="metric-num">20<span class="unit">+년</span></div>
+          <div class="metric-label">현장 HR 기획·운영 경력</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-num">50<span class="unit">%</span></div>
+          <div class="metric-label">온보딩 정비 후 입사 3개월 내 퇴사율 감소</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-num">40<span class="unit">+개사</span></div>
+          <div class="metric-label">스타트업·스케일업 문제해결 레퍼런스</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-num">100<span class="unit">%</span></div>
+          <div class="metric-label">현장 결재 및 즉시 실행 가능한 완제품 문서</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points Section -->
+  <section class="pain-points-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">GROWTH CHALLENGES</span>
+        <h2 class="section-title">조직이 성장하며 마주하는 3대 고민</h2>
+        <p class="section-desc">10인 미만은 대표의 직관으로 가능하지만, 20인·50인·80인으로 커지는 순간 구조적 성장통이 발생합니다.</p>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon"><i class="fa-solid fa-scale-unbalanced"></i></div>
+          <h3>1. 인사노무 법적 리스크</h3>
+          <p>취업규칙 미신고, 근로시간 및 연차 산정 오류 등 인터넷 무료 양식으로는 감당하기 어려운 노동법적 컴플라이언스 불안</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon"><i class="fa-solid fa-sitemap"></i></div>
+          <h3>2. 역할과 책임(R&R) 부재</h3>
+          <p>대표 1인의 직관적 의사결정에 의존하던 한계와 부서 간 업무 경계 모호로 인한 의사결정 병목 및 실무 누수</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>3. 평가와 보상 기준 결여</h3>
+          <p>명확한 성과 평가 지표가 없어 연봉 협상과 인센티브 지급 때마다 반복되는 감정 소모와 핵심 인재의 동기부여 저하</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services (4 Pillars) -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CORE SERVICES</span>
+        <h2 class="section-title">실컨의 4대 핵심 해결책</h2>
+        <p class="section-desc">탁상공론식 두꺼운 보고서를 지양하고, 대표와 실무자가 바로 적용할 수 있는 체계를 구축합니다.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Pillar 1 -->
+        <div class="service-card">
+          <div class="service-header">
+            <span class="pillar-badge">솔루션 01</span>
+            <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          </div>
+          <h3>인사·노무 진단 & 규정 정비</h3>
+          <p class="service-summary">우리 회사 업종과 근무 형태에 맞춘 실질적 노무 리스크 방어</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> 근로기준법 및 노동법규 준수 여부 정밀 진단</li>
+            <li><i class="fa-solid fa-check"></i> 맞춤형 취업규칙, 근로계약서, 제반 규정 개정</li>
+            <li><i class="fa-solid fa-check"></i> 외부 감사 및 노동 분쟁 사전 예방 체계 수립</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="service-card">
+          <div class="service-header">
+            <span class="pillar-badge">솔루션 02</span>
+            <div class="service-icon"><i class="fa-solid fa-users-gear"></i></div>
+          </div>
+          <h3>조직 구조 & 직무 체계(R&R) 수립</h3>
+          <p class="service-summary">대표가 모든 실무를 챙기지 않아도 시스템으로 움직이는 조직 체계</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> 부서별·직무별 명확한 역할과 책임(R&R) 정의</li>
+            <li><i class="fa-solid fa-check"></i> 성장 단계에 맞춘 직급·직책 및 권한 위임 체계</li>
+            <li><i class="fa-solid fa-check"></i> 회의체 재설계 및 의사결정 속도 개선</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="service-card">
+          <div class="service-header">
+            <span class="pillar-badge">솔루션 03</span>
+            <div class="service-icon"><i class="fa-solid fa-award"></i></div>
+          </div>
+          <h3>성과평가 & 보상 체계 설계</h3>
+          <p class="service-summary">감정적 협상이 아닌 설명 가능한 공정한 보상 시스템 정립</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> 기업 목표 연계 핵심 직무 평가지표(KPI) 수립</li>
+            <li><i class="fa-solid fa-check"></i> 합리적인 연봉 테이블 및 성과급/인센티브 밴드</li>
+            <li><i class="fa-solid fa-check"></i> 피드백 루틴 정착 및 다면평가 가이드라인</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="service-card">
+          <div class="service-header">
+            <span class="pillar-badge">솔루션 04</span>
+            <div class="service-icon"><i class="fa-solid fa-user-check"></i></div>
+          </div>
+          <h3>채용 온보딩 & 평판조회</h3>
+          <p class="service-summary">뽑는 것부터 정착까지, 채용 실패 리스크의 원천 차단</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> 직무기술서(JD), 면접 질문 DB 및 선발 기준화</li>
+            <li><i class="fa-solid fa-check"></i> 입사 3개월 내 조기 이탈을 방지하는 온보딩 프로세스</li>
+            <li><i class="fa-solid fa-check"></i> C레벨·소장급·임원급 실명 기반 평판조회(레퍼런스 체크)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TRANSPARENT PRICING</span>
+        <h2 class="section-title">투명하고 합리적인 서비스 가격</h2>
+        <p class="section-desc">대형 펌의 비싼 간접비와 보고서 비용 거품을 걷어내고, 10~80인 기업에 꼭 필요한 실무 중심 가격을 제안합니다.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- 1. 첫 번째 카드: 1-Day 인사·노무 진단 -->
+        <div class="pricing-card card-diagnosis">
+          <div class="pricing-badge">경량 진단</div>
+          <h3 class="plan-title">1-Day 인사·노무 진단</h3>
+          <div class="plan-price">30~50<span class="currency">만 원</span></div>
+          <p class="plan-desc">10~30인 초기 스케일업 기업의 필수 컴플라이언스 및 노무 리스크를 빠르게 점검합니다.</p>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-circle-check"></i> 현행 근로계약서·취업규칙 적법성 정밀 진단</li>
+            <li><i class="fa-solid fa-circle-check"></i> 10대 핵심 노무 리스크 체크리스트 제공</li>
+            <li><i class="fa-solid fa-circle-check"></i> 대표/경영진 1:1 온라인 결과 피드백 (60분)</li>
+            <li><i class="fa-solid fa-circle-check"></i> 즉시 수정 가능한 표준 서식 샘플 제공</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-block">진단 신청하기</a>
+        </div>
+
+        <!-- 2. 두 번째 카드 (중앙 강조): 전사 HR 체계 구축·개선 프로젝트 -->
+        <div class="pricing-card featured card-project">
+          <div class="featured-ribbon">전사 통합 솔루션</div>
+          <div class="pricing-badge featured-badge">통합 프로젝트</div>
+          <h3 class="plan-title">전사 HR 체계 구축·개선 프로젝트</h3>
+          <div class="plan-price">맞춤 프로젝트<span class="currency">(규모별 협의)</span></div>
+          <p class="plan-desc">20~80인 성장기 기업을 위한 인사규정, 직무 체계, 평가·보상, 온보딩의 종합 구축 솔루션입니다.</p>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-circle-check"></i> <strong>4대 핵심 솔루션</strong> 전사 맞춤 커스터마이징</li>
+            <li><i class="fa-solid fa-circle-check"></i> 전사 직무분장(R&R) 및 직급/승진 체계 수립</li>
+            <li><i class="fa-solid fa-circle-check"></i> 성과평가(KPI) 및 연봉 테이블/인센티브 설계</li>
+            <li><i class="fa-solid fa-circle-check"></i> 신입 3개월 퇴사율 감소 온보딩 매뉴얼 구축</li>
+            <li><i class="fa-solid fa-circle-check"></i> <strong>현장 안착 코칭 및 사후 3개월 모니터링</strong></li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-block">상세 견적 및 일정 문의</a>
+        </div>
+
+        <!-- 3. 세 번째 카드: 월 상시 HR 자문 & 실명 평판조회 별도 안내 -->
+        <div class="pricing-card card-advisory">
+          <div class="pricing-badge">정기 자문 & 특화</div>
+          <h3 class="plan-title">월 상시 HR 자문</h3>
+          <div class="plan-price">월 50~100<span class="currency">만 원</span></div>
+          <p class="plan-desc">상시 발생하는 인사·노무 이슈를 전담 자문하고, 핵심 인재 채용 및 조직 운영을 지원합니다.</p>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-circle-check"></i> 월 상시 인사노무 질의응답 및 규정 실시간 검토</li>
+            <li><i class="fa-solid fa-circle-check"></i> 입·퇴사 및 연차/근로시간 분쟁 예방 코칭</li>
+            <li><i class="fa-solid fa-circle-check"></i> 조직 이슈 발생 시 대표 1:1 전략 핫라인 지원</li>
+          </ul>
+
+          <!-- 평판조회 동일 카드 내부 별도 서비스 영역 (자문료 포함 오해 방지) -->
+          <div class="reputation-sub-card">
+            <div class="reputation-header">
+              <div class="reputation-title-wrap">
+                <span class="reputation-badge">별도 서비스</span>
+                <strong class="reputation-name">실명 평판조회</strong>
+              </div>
+              <div class="reputation-price">1인 95만 원 <span class="reputation-contract">(별도 계약)</span></div>
+            </div>
+            <p class="reputation-desc">채용 대상자의 경력 및 업무 수행 관련 평판 검증</p>
+          </div>
+
+          <a href="https://open.kakao.com/o/gtwjWiai" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block btn-kakao-outline">
+            <i class="fa-solid fa-comment"></i> 오픈채팅 즉시 문의
+          </a>
+        </div>
+      </div>
+
+      <!-- 하단 개선 안내 문구 -->
+      <div class="pricing-note">
+        <i class="fa-solid fa-circle-check"></i>
+        <div class="note-text-wrap">
+          <strong class="note-main">보고서가 아닌, 현장에서 실행되는 결과물</strong>
+          <p class="note-desc">SILCONLAB은 기업의 실제 운영 환경에 맞춰 즉시 활용할 수 있는 인사·조직 규정과 실무 문서를 설계합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Case Studies (Tabs & Filter) -->
+  <section class="cases-section" id="cases">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">SUCCESS STORIES</span>
+        <h2 class="section-title">현장에서 증명된 실컨의 문제 해결 사례</h2>
+        <p class="section-desc">실제 고객사의 현장 고민을 구조화하고 실행을 통해 만들어낸 구체적인 변화입니다.</p>
+      </div>
+
+      <!-- Case Filter Buttons -->
+      <div class="case-filters">
+        <button class="filter-btn active" data-filter="all">전체 보기</button>
+        <button class="filter-btn" data-filter="startup">IT · 스타트업</button>
+        <button class="filter-btn" data-filter="mfg">제조 · 에너지</button>
+        <button class="filter-btn" data-filter="logistics">물류 · 유통</button>
+      </div>
+
+      <!-- Cases Grid -->
+      <div class="cases-grid" id="casesGrid">
+        <!-- Case 1 -->
+        <div class="case-card" data-category="startup">
+          <div class="case-badge">IT · 플랫폼 (30인)</div>
+          <h3 class="case-title">“이제는 입사 후 남는 직원이 생깁니다”</h3>
+          <div class="case-meta"><strong>주요 과제:</strong> 신입 직원의 3개월 내 잦은 이탈 및 평가 체계 부재</div>
+          <div class="case-solution"><strong>실컨의 해결:</strong> 핵심가치 기반 채용 기준 수립 + 온보딩 가이드북 및 직무 기반 피드백 툴 도입</div>
+          <div class="case-result"><i class="fa-solid fa-arrow-trend-up"></i> 3개월 내 퇴사율 50% 감소, 연봉 협상 갈등 해소</div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-card" data-category="mfg">
+          <div class="case-badge">제조 전문기업 (40인)</div>
+          <h3 class="case-title">“노무 리스크에 대한 불안이 완전히 사라졌습니다”</h3>
+          <div class="case-meta"><strong>주요 과제:</strong> 필수 인사 규정 및 표준 서식 부재로 인한 노동청 감사 불안</div>
+          <div class="case-solution"><strong>실컨의 해결:</strong> 취업규칙 전면 개정, 맞춤 근로계약서 및 휴가/근로시간 관리 프로세스 완비</div>
+          <div class="case-result"><i class="fa-solid fa-arrow-trend-up"></i> 법적 컴플라이언스 100% 충족, 현장 관리자 운영 기준 정립</div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="case-card" data-category="logistics">
+          <div class="case-badge">물류 · 유통 (35인)</div>
+          <h3 class="case-title">“대표가 실무에서 한 발 물러설 수 있게 되었습니다”</h3>
+          <div class="case-meta"><strong>주요 과제:</strong> 대표 1인 중심의 인사 결정으로 인한 병목 및 팀장 리더십 부재</div>
+          <div class="case-solution"><strong>실컨의 해결:</strong> 부서별 직무기술서(JD) 및 R&R 분장 + 중간관리자 리더십 코칭 및 팀 매뉴얼 구축</div>
+          <div class="case-result"><i class="fa-solid fa-arrow-trend-up"></i> 팀장 주도 의사결정 정착, 대표의 핵심 경영 집중 시간 확보</div>
+        </div>
+
+        <!-- Case 4 -->
+        <div class="case-card" data-category="startup">
+          <div class="case-badge">디자인 에이전시 (25인)</div>
+          <h3 class="case-title">“연봉 협상이 아니라 명확한 설명이 가능해졌습니다”</h3>
+          <div class="case-meta"><strong>주요 과제:</strong> 객관적 평가 기준이 없어 매년 연봉 협상 시 퇴사 및 내부 불만 가중</div>
+          <div class="case-solution"><strong>실컨의 해결:</strong> 직무 역량 기반 평가표 및 투명한 연봉 테이블/인센티브 가이드라인 정립</div>
+          <div class="case-result"><i class="fa-solid fa-arrow-trend-up"></i> 평가 공정성 인식 제고, 구성원 만족도 및 업무 몰입도 향상</div>
+        </div>
+      </div>
+
+      <!-- Testimonial Quote Slider / Highlights -->
+      <div class="testimonial-box">
+        <div class="testimonial-icon"><i class="fa-solid fa-quote-left"></i></div>
+        <p class="testimonial-text">
+          “단순히 보고서만 던져주고 가는 일반 컨설팅과 달리, 실컨은 우리 회사 대표 스타일과 현장 실무자의 눈높이에 맞춰 당장 내일부터 쓸 수 있는 문서를 함께 만들어주었습니다. 책임감 있는 동행이 무엇인지 실감했습니다.”
+        </p>
+        <div class="testimonial-author">— 35인 스케일업 플랫폼사 대표이사</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-tag">ABOUT SILCONLAB</span>
+          <h2 class="section-title">문제는 반복되고, 해법은 구조에 있습니다</h2>
+          <p class="about-lead" style="word-break: keep-all;">
+            기업이 20인, 50인, 80인으로 성장하면서 마주하는 인사 문제는 결코 개인의 부족함이 아닌 <strong>'조직 성장통'</strong>입니다.<br>
+            대표 혼자 모든 결정과 갈등을 짊어지는 구조에서 벗어나야 기업이 다음 단계로 도약할 수 있습니다.<br>
+            실컨(SILCONLAB)은 두꺼운 보고서만 남기는 탁상공론을 배제하고, <strong>대표가 일일이 관여하지 않더라도 명확한 기준과 매뉴얼로 회사가 스스로 움직이는 시스템 경영 인프라</strong>를 구축합니다.
+          </p>
+          
+          <div class="ceo-profile-card">
+            <div class="ceo-info">
+              <h3>김배성 <span class="ceo-title">대표 / 총괄 컨설턴트</span></h3>
+              <p class="ceo-desc">20여 년간 스타트업부터 대기업까지 다양한 규모의 조직에서 HR 기획과 운영을 수행해 온 전문가입니다.</p>
+            </div>
+            <ul class="ceo-highlights">
+              <li><i class="fa-solid fa-check-double"></i> 30인에서 400인 규모로 급성장하는 조직의 HR 인프라 제로베이스 구축</li>
+              <li><i class="fa-solid fa-check-double"></i> 3,000인 규모 대기업 전사 직무기술서 체계 수립 및 다면평가 고도화</li>
+              <li><i class="fa-solid fa-check-double"></i> 노사 관계 안정화, 단체협약 무분쟁 타결 및 현장 분쟁 예방 완수</li>
+              <li><i class="fa-solid fa-check-double"></i> 신대구부산고속도로, 미시령동서관통도로 등 핵심인재 평판조회 및 상시 자문</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="philosophy-card">
+            <h4>실컨의 3대 차별화 원칙</h4>
+            <div class="principle-item">
+              <span class="num">01</span>
+              <div>
+                <strong>탁상공론 배제</strong>
+                <p>수십 쪽의 이론 보고서 대신 즉시 현장에 배포 가능한 완제품 서식 납품</p>
+              </div>
+            </div>
+            <div class="principle-item">
+              <span class="num">02</span>
+              <div>
+                <strong>자율 운영 시스템 구축</strong>
+                <p>대표 1인의 머릿속 판단에 머물지 않고, 객관적 규정과 직무 매뉴얼로 팀이 스스로 움직이는 자율 경영 실현</p>
+              </div>
+            </div>
+            <div class="principle-item">
+              <span class="num">03</span>
+              <div>
+                <strong>지속 가능한 정착</strong>
+                <p>일회성 자문에 그치지 않고 조직 문화로 완전히 자리 잡을 때까지 동행 코칭</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Consultation Form -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <span class="section-tag light">CONTACT US</span>
+          <h2 class="contact-title" style="word-break: keep-all;">조직의 문제를 나눌 준비가 되셨나요?</h2>
+          <p>현재 겪고 계신 가장 답답한 인사·조직 고민 한 가지만 편하게 남겨주세요. 15분 온라인 미팅을 통해 해결의 실마리를 함께 찾아드립니다.</p>
+          
+          <div class="contact-methods">
+            <div class="method-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>이메일 문의</strong>
+                <a href="mailto:business@silconlab.com">business@silconlab.com</a>
+              </div>
+            </div>
+            <div class="method-item">
+              <i class="fa-solid fa-comment-dots"></i>
+              <div>
+                <strong>카카오톡 오픈채팅</strong>
+                <a href="https://open.kakao.com/o/gtwjWiai" target="_blank" rel="noopener noreferrer">실시간 1:1 상담 바로가기</a>
+              </div>
+            </div>
+            <div class="method-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>사무실 위치</strong>
+                <span>서울특별시 서초구 마방로6길 13, 4층 4146호</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                <div class="contact-form-box" id="contactFormContainer">
+          <!-- 1. 기본 상담 신청 & 수정 폼 -->
+          <form class="contact-form" id="consultationForm" novalidate>
+            <div class="form-header-wrap">
+              <h3 id="formTitle">15분 무료 사전 미팅 / 견적 신청</h3>
+              <div id="formModeBadge" class="form-mode-badge" style="display: none;"></div>
+            </div>
+            
+            <div class="form-group" id="groupCompanyName">
+              <label for="companyName">회사명 *</label>
+              <input type="text" id="companyName" name="company" placeholder="예: (주)실컨" autocomplete="organization">
+              <span class="field-error-msg" id="errorCompanyName"></span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" id="groupContactPerson">
+                <label for="contactPerson">담당자명 / 직함 *</label>
+                <input type="text" id="contactPerson" name="name" placeholder="예: 김대표 / 대표이사" autocomplete="name">
+                <span class="field-error-msg" id="errorContactPerson"></span>
+              </div>
+              <div class="form-group" id="groupEmployeeCount">
+                <label for="employeeCount">임직원 수 *</label>
+                <select id="employeeCount" name="employees">
+                  <option value="">선택해주세요</option>
+                  <option value="10인 미만">10인 미만</option>
+                  <option value="10~30인">10~30인</option>
+                  <option value="30~50인">30~50인</option>
+                  <option value="50~80인">50~80인</option>
+                  <option value="80인 이상">80인 이상</option>
+                </select>
+                <span class="field-error-msg" id="errorEmployeeCount"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" id="groupPhone">
+                <label for="phone">연락처 *</label>
+                <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" maxlength="13" autocomplete="tel">
+                <span class="field-error-msg" id="errorPhone"></span>
+              </div>
+              <div class="form-group" id="groupEmail">
+                <label for="email">이메일 주소 *</label>
+                <input type="email" id="email" name="email" placeholder="example@company.com" autocomplete="email">
+                <span class="field-error-msg" id="errorEmail"></span>
+              </div>
+            </div>
+
+            <div class="form-group" id="groupService">
+              <label for="serviceInterest">관심 서비스 영역</label>
+              <select id="serviceInterest" name="service">
+                <option value="전체 상담">전체 맞춤 상담 필요</option>
+                <option value="1-Day 경량 진단">1-Day 인사·노무 경량 진단</option>
+                <option value="전사 HR 셋업 패키지">전사 HR 셋업 패키지 (평가/보상/직무)</option>
+                <option value="상시 자문 및 평판조회">월 정기 자문 또는 평판조회</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="groupMessage">
+              <label for="message">주요 고민 사항 / 전하실 말씀</label>
+              <textarea id="message" name="message" rows="3" placeholder="현재 겪고 계신 인사/조직 상의 문제나 문의 내용을 자유롭게 적어주세요."></textarea>
+            </div>
+
+            <div class="form-submit-group">
+              <button type="submit" id="btnSubmitPrimary" class="btn btn-primary btn-block btn-lg">
+                <i class="fa-solid fa-paper-plane" id="submitIcon"></i> <span id="submitBtnText">상담 신청서 제출하기</span>
+              </button>
+              <button type="button" id="btnCancelEdit" class="btn btn-secondary btn-block" style="display: none;">
+                <i class="fa-solid fa-xmark"></i> 수정 취소 (접수 내역으로 돌아가기)
+              </button>
+            </div>
+            <p class="form-privacy" id="formPrivacyText">보내주신 정보는 사전 미팅 안내 외 다른 목적으로 사용되지 않습니다.</p>
+          </form>
+
+          <!-- 2. 추가 문의 전용 폼 -->
+          <div id="followupFormWrap" style="display: none;">
+            <form class="contact-form" id="followupForm" novalidate>
+              <div class="form-header-wrap">
+                <h3 id="followupFormTitle">추가 문의 및 전달사항 작성</h3>
+                <div class="applicant-summary-badge" id="followupApplicantBadge">
+                  <i class="fa-solid fa-user-check"></i> <span id="followupApplicantText">신청자 정보 연동</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="followupCategory">추가 문의 구분 (선택)</label>
+                <select id="followupCategory" name="category">
+                  <option value="서비스 범위 및 세부 견적 문의">서비스 범위 및 세부 견적 문의</option>
+                  <option value="미팅 일정 조율 및 진행 방식">미팅 일정 조율 및 진행 방식</option>
+                  <option value="임원/소장급 평판조회 추가">임원/소장급 평판조회 추가 문의</option>
+                  <option value="기타 요청 및 참고사항 전달">기타 요청 및 참고사항 전달</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="groupFollowupMessage">
+                <label for="followupMessage">추가 문의 / 요청 사항 *</label>
+                <textarea id="followupMessage" name="followupMessage" rows="4" placeholder="추가로 궁금하신 사항이나 대표 컨설턴트에게 전하실 말씀을 적어주세요."></textarea>
+                <span class="field-error-msg" id="errorFollowupMessage"></span>
+              </div>
+
+              <div class="form-submit-group">
+                <button type="submit" id="btnSubmitFollowup" class="btn btn-accent btn-block btn-lg">
+                  <i class="fa-solid fa-plus-circle" id="followupSubmitIcon"></i> <span id="followupSubmitBtnText">추가 문의 전달하기</span>
+                </button>
+                <button type="button" id="btnCancelFollowup" class="btn btn-secondary btn-block">
+                  <i class="fa-solid fa-xmark"></i> 취소하고 접수 결과로 돌아가기
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- 3. 접수 성공 & 신청 내역 카드 뷰 -->
+          <div id="successStateWrap" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo footer-logo-wrap">
+            <div class="logo-symbol">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="10" fill="url(#silcon-grad-footer)"/>
+                <path d="M12 14.5C12 12.567 13.567 11 15.5 11H25C26.6569 11 28 12.3431 28 14C28 15.6569 26.6569 17 25 17H18C16.8954 17 16 17.8954 16 19C16 20.1046 16.8954 21 18 21H24.5C27.5376 21 30 23.4624 30 26.5C30 29.5376 27.5376 32 24.5 32H15C13.3431 32 12 30.6569 12 29C12 27.3431 13.3431 26 15 26H23.5C24.8807 26 26 24.8807 26 23.5C26 22.1193 24.8807 21 23.5 21H18C14.6863 21 12 18.3137 12 15V14.5Z" fill="white"/>
+                <circle cx="27" cy="14" r="2.5" fill="#38BDF8"/>
+                <defs>
+                  <linearGradient id="silcon-grad-footer" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#2563EB"/>
+                    <stop offset="1" stop-color="#0F172A"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="logo-text-group">
+              <div class="logo-main">
+                <span class="logo-silcon">SILCON</span>
+                <span class="logo-pill">LAB</span>
+              </div>
+              <span class="logo-sub">EXECUTIVE ADVISORY</span>
+            </div>
+          </div>
+          <p class="footer-slogan" style="word-break: keep-all;">실행 가능한 전략이 곧 경쟁력입니다.<br>조직에 뿌리내리는 실행 중심 경영컨설팅, 주식회사 실컨</p>
+        </div>
+        <div class="footer-links">
+          <h4>바로가기</h4>
+          <ul>
+            <li><a href="#services">서비스 소개</a></li>
+            <li><a href="#pricing">서비스 가격</a></li>
+            <li><a href="#cases">고객 사례</a></li>
+            <li><a href="#about">실컨 소개</a></li>
+            <li><a href="#contact">상담 신청</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>이메일: business@silconlab.com</p>
+          <p>오픈채팅: <a href="https://open.kakao.com/o/gtwjWiai" target="_blank" rel="noopener noreferrer">실시간 상담 연결</a></p>
+        </div>
+      </div>
+
+      <hr class="footer-divider">
+
+      <div class="footer-bottom">
+        <div class="company-info">
+          <p><strong>주식회사 실컨 (SILCONLAB)</strong> | 대표자: 김배성 | 사업자등록번호: 467-87-02968</p>
+          <p>주소: 서울특별시 서초구 마방로6길 13, 4층 4146호 | 이메일: business@silconlab.com</p>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023–2026 SILCONLAB. All rights reserved.</p>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <button id="scrollToTopBtn" title="맨 위로"><i class="fas fa-arrow-up"></i></button>
-  <script src="main.js" defer></script>
+  <!-- Floating Kakao Button -->
+  <a href="https://open.kakao.com/o/gtwjWiai" target="_blank" rel="noopener noreferrer" class="floating-kakao" title="카카오톡 1:1 상담">
+    <i class="fa-solid fa-comment"></i>
+  </a>
+
+  <!-- Custom JavaScript -->
+  <script src="./js/main.js"></script>
 </body>
 </html>
