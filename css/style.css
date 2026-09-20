@@ -731,20 +731,19 @@ img {
 }
 
 /* ==========================================================================
-   6. Pricing Section
-   ========================================================================== */
-/* ==========================================================================
-   6. Transparent Pricing Section (v7 Enhanced)
-   - Dark Theme with Black/Navy Background (#070D1F ~ #0B132B) & Deep Slate Cards (#0F172A)
-   - Royal Blue Accent (#2563EB) on Central Featured Card
-   - Clear Visual Separation of Sub-Service (실명 평판조회)
-   - Horizontal Alignment & Dynamic Equal Height
-   - Mobile Order: (1) 전사 HR 프로젝트 -> (2) 1-Day 진단 -> (3) 월 상시 HR 자문
+   6. Pricing & Plans Section (Refined 4-Card Responsive Grid)
    ========================================================================== */
 .pricing-section {
   padding: 110px 0;
   background: linear-gradient(180deg, #070D1F 0%, #0B132B 100%);
   color: #FFFFFF;
+}
+
+.pricing-container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .pricing-section .section-title {
@@ -758,24 +757,25 @@ img {
 .pricing-section .section-desc {
   font-size: 1.0625rem;
   color: #94A3B8;
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
   line-height: 1.7;
 }
 
-.pricing-grid {
+/* 4-Card Grid Default (Desktop) */
+.pricing-grid-4 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   align-items: stretch;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
 }
 
 .pricing-card {
   background: #0F172A;
   border: 1px solid #1E293B;
   border-radius: var(--radius-lg);
-  padding: 42px 30px;
+  padding: 38px 20px 30px 20px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -790,15 +790,18 @@ img {
   box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.6);
 }
 
-/* Central Featured Card */
+/* Central Featured Card: 전사 HR 체계 구축·개선 */
 .pricing-card.featured {
-  border: 2px solid var(--color-accent);
+  border: 2px solid #2563EB;
+  background: linear-gradient(180deg, #0E1A38 0%, #0F172A 100%);
   box-shadow: 0 16px 36px -4px rgba(37, 99, 235, 0.35);
-  transform: scale(1.02);
+  position: relative;
+  z-index: 2;
 }
 
 .pricing-card.featured:hover {
-  transform: scale(1.02) translateY(-6px);
+  border-color: #38BDF8;
+  box-shadow: 0 20px 40px -4px rgba(37, 99, 235, 0.45);
 }
 
 .featured-ribbon {
@@ -806,14 +809,14 @@ img {
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--color-accent);
+  background: linear-gradient(135deg, #2563EB 0%, #0284C7 100%);
   color: #FFFFFF;
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.04em;
-  padding: 6px 18px;
+  padding: 5px 16px;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
   white-space: nowrap;
 }
 
@@ -821,7 +824,9 @@ img {
   font-size: 0.8125rem;
   font-weight: 700;
   color: #94A3B8;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .pricing-badge.featured-badge {
@@ -829,41 +834,90 @@ img {
 }
 
 .plan-title {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #FFFFFF;
   margin-bottom: 12px;
-  min-height: 56px;
+  min-height: 52px;
   display: flex;
   align-items: center;
   word-break: keep-all;
   line-height: 1.35;
 }
 
+/* Price Box */
 .plan-price {
-  font-size: 1.875rem;
+  font-size: 1.75rem;
   font-weight: 900;
   color: #FFFFFF;
   line-height: 1.2;
   margin-bottom: 14px;
-  min-height: 46px;
+  min-height: 50px;
   display: flex;
   align-items: baseline;
-  word-break: keep-all;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+}
+
+.plan-price .price-val {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.plan-price .price-unit {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #94A3B8;
+  margin-right: 4px;
 }
 
 .plan-price .currency {
   font-size: 0.9375rem;
   font-weight: 600;
   color: #94A3B8;
-  margin-left: 6px;
+  margin-left: 3px;
+}
+
+.plan-price .price-prefix {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #38BDF8;
+  white-space: nowrap;
+}
+
+/* Custom Price for Card 2 (Never wraps or splits awkwardly) */
+.plan-price.plan-price-custom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 50px;
+  margin-bottom: 14px;
+  gap: 0;
+}
+
+.plan-price.plan-price-custom .price-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.plan-price.plan-price-custom .price-sub {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #38BDF8;
+  margin-top: 4px;
+  white-space: nowrap;
 }
 
 .plan-desc {
-  font-size: 0.875rem;
+  font-size: 0.84375rem;
   color: #94A3B8;
-  line-height: 1.6;
-  margin-bottom: 22px;
+  line-height: 1.55;
+  margin-bottom: 20px;
   min-height: 52px;
   word-break: keep-all;
 }
@@ -871,32 +925,38 @@ img {
 .plan-divider {
   border: none;
   border-top: 1px solid #1E293B;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
+/* Feature List (Guaranteed Single Text Flow) */
 .plan-features {
-  margin-bottom: 26px;
+  margin-bottom: 24px;
   flex-grow: 1;
   list-style: none;
   padding: 0;
 }
 
 .plan-features li {
-  font-size: 0.9375rem;
+  font-size: 0.84375rem;
   color: #CBD5E1;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 8px;
   line-height: 1.5;
-  word-break: keep-all;
 }
 
 .plan-features li i {
   color: #10B981;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   margin-top: 3px;
   flex-shrink: 0;
+}
+
+.plan-features li .feature-text {
+  flex: 1;
+  min-width: 0;
+  word-break: keep-all;
 }
 
 .plan-features li strong {
@@ -904,77 +964,18 @@ img {
   font-weight: 700;
 }
 
-/* Card 3: Reputation Sub-Service Box */
-.reputation-sub-card {
-  background: rgba(30, 41, 59, 0.65);
-  border: 1px solid #334155;
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
-  margin-top: auto;
-  margin-bottom: 22px;
-  text-align: left;
-}
-
-.reputation-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-
-.reputation-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.reputation-badge {
-  background: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: #38BDF8;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 4px;
-}
-
-.reputation-name {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: #FFFFFF;
-}
-
-.reputation-price {
-  font-size: 0.875rem;
-  font-weight: 800;
-  color: #38BDF8;
-}
-
-.reputation-contract {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #94A3B8;
-  margin-left: 2px;
-}
-
-.reputation-desc {
-  font-size: 0.8125rem;
-  color: #94A3B8;
-  margin: 0;
-  line-height: 1.4;
-  word-break: keep-all;
-}
-
-/* Card CTA Buttons alignment */
+/* Card CTA Buttons */
 .pricing-card .btn {
   margin-top: auto;
-  min-height: 48px;
+  min-height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0.875rem;
   font-weight: 700;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
 }
 
 .pricing-card .btn-outline {
@@ -986,16 +987,7 @@ img {
 .pricing-card .btn-outline:hover {
   background: #38BDF8;
   color: #0F172A;
-}
-
-.pricing-card .btn-kakao-outline {
-  border-color: #FEE500;
-  color: #FEE500;
-}
-
-.pricing-card .btn-kakao-outline:hover {
-  background: #FEE500;
-  color: #000000;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
 }
 
 .pricing-card .btn-primary {
@@ -1007,6 +999,7 @@ img {
 
 .pricing-card .btn-primary:hover {
   background: #1D4ED8;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
 }
 
 /* Section Bottom Note Box */
@@ -1204,7 +1197,7 @@ img {
 }
 
 /* ==========================================================================
-   8. About SILCONLAB & Representative
+   8. About SILCONLAB & Representative (Unified & Height Balanced)
    ========================================================================== */
 .about-section {
   padding: 100px 0;
@@ -1214,81 +1207,166 @@ img {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 56px;
-  align-items: center;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: stretch;
 }
 
-.about-lead {
-  font-size: 1.125rem;
-  color: var(--color-text-muted);
-  line-height: 1.75;
-  margin-bottom: 32px;
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+/* Unified Philosophy Callout (No blue stripe, identical executive styling) */
+.growth-pain-callout {
+  background: #0F172A;
+  border: 1px solid #1E293B;
+  border-radius: var(--radius-md);
+  padding: 26px 28px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+  transition: var(--transition-normal);
+}
+
+.growth-pain-callout:hover {
+  border-color: #334155;
+  transform: translateY(-2px);
+}
+
+.growth-pain-callout .callout-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #38BDF8;
+  font-size: 0.84375rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.growth-pain-callout .callout-quote {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.6;
+  margin-bottom: 8px;
   word-break: keep-all;
 }
 
+.growth-pain-callout .callout-sub {
+  font-size: 0.875rem;
+  color: #94A3B8;
+  line-height: 1.6;
+  word-break: keep-all;
+  margin: 0;
+}
+
+/* CEO Profile Card (Matches top callout & stretches nicely) */
 .ceo-profile-card {
-  background: var(--color-bg-light);
-  border: 1px solid var(--color-border);
+  background: #0F172A;
+  border: 1px solid #1E293B;
   border-radius: var(--radius-md);
-  padding: 32px;
+  padding: 28px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-normal);
+}
+
+.ceo-profile-card:hover {
+  border-color: #334155;
+  transform: translateY(-2px);
 }
 
 .ceo-info h3 {
-  font-size: 1.375rem;
+  font-size: 1.3125rem;
   font-weight: 800;
   color: #FFFFFF !important;
   margin-bottom: 4px;
 }
 
 .ceo-title {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-accent);
+  color: #38BDF8;
   margin-left: 6px;
 }
 
 .ceo-desc {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  margin-bottom: 20px;
+  font-size: 0.84375rem;
+  color: #94A3B8;
+  margin-bottom: 18px;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+.ceo-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .ceo-highlights li {
-  font-size: 0.875rem;
-  color: var(--color-text-main);
+  font-size: 0.84375rem;
+  color: #CBD5E1;
   margin-bottom: 10px;
   display: flex;
   align-items: flex-start;
   gap: 10px;
   line-height: 1.5;
+  word-break: keep-all;
+}
+
+.ceo-highlights li:last-child {
+  margin-bottom: 0;
 }
 
 .ceo-highlights li i {
-  color: var(--color-accent);
+  color: #38BDF8;
   margin-top: 3px;
+  font-size: 0.8125rem;
+  flex-shrink: 0;
 }
 
+.about-visual {
+  height: 100%;
+}
+
+/* Right Card: SILCON 3대 원칙 (Stretches to match left column exactly) */
 .philosophy-card {
   background: #0F172A !important;
   color: #FFFFFF !important;
   border: 1px solid #1E293B !important;
-  border-radius: var(--radius-lg);
-  padding: 40px 32px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-normal);
+}
+
+.philosophy-card:hover {
+  border-color: #334155;
+  transform: translateY(-2px);
 }
 
 .philosophy-card h4 {
   font-size: 1.25rem;
   font-weight: 800;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
   color: #38BDF8;
 }
 
 .principle-item {
   display: flex;
-  gap: 18px;
-  margin-bottom: 24px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .principle-item:last-child {
@@ -1296,29 +1374,31 @@ img {
 }
 
 .principle-item .num {
-  font-size: 1.25rem;
+  font-size: 1.1875rem;
   font-weight: 900;
   color: #38BDF8;
-  opacity: 0.8;
-  line-height: 1;
+  opacity: 0.85;
+  line-height: 1.1;
 }
 
 .principle-item strong {
   display: block;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 4px;
+  color: #FFFFFF;
 }
 
 .principle-item p {
-  font-size: 0.875rem;
-  color: #CBD5E1;
-  line-height: 1.5;
+  font-size: 0.84375rem;
+  color: #94A3B8;
+  line-height: 1.55;
   word-break: keep-all;
+  margin: 0;
 }
 
 /* ==========================================================================
-   9. Contact & Consultation Form
+   9. Contact & Consultation Form (Balanced Height & Enriched Left Column)
    ========================================================================== */
 .contact-section {
   padding: 100px 0;
@@ -1328,60 +1408,182 @@ img {
 
 .contact-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 56px;
-  align-items: center;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 44px;
+  align-items: stretch;
 }
 
-.contact-info h2 {
-  font-size: 2.25rem;
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 20px;
+}
+
+.contact-header-wrap {
+  margin-bottom: 2px;
+}
+
+.contact-title {
+  font-size: 2.125rem;
   font-weight: 800;
   line-height: 1.3;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  color: #FFFFFF;
+  word-break: keep-all;
 }
 
-.contact-info p {
-  font-size: 1rem;
-  color: #CBD5E1;
-  line-height: 1.7;
-  margin-bottom: 36px;
+.contact-lead-desc {
+  font-size: 0.9375rem;
+  color: #94A3B8;
+  line-height: 1.65;
+  margin: 0;
+  word-break: keep-all;
 }
 
+/* 3-Step Consultation Process Card */
+.contact-process-card {
+  background: #0F172A;
+  border: 1px solid #1E293B;
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.process-card-title {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: #38BDF8;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+}
+
+.process-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.process-step-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.step-badge {
+  font-size: 0.71875rem;
+  font-weight: 800;
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 3px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+}
+
+.step-detail strong {
+  font-size: 0.84375rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.step-detail p {
+  font-size: 0.78125rem;
+  color: #94A3B8;
+  line-height: 1.5;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* Trust Assurance Card */
+.contact-trust-card {
+  background: rgba(30, 41, 59, 0.45);
+  border: 1px solid #334155;
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.trust-item i {
+  color: #10B981;
+  font-size: 0.9375rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.trust-item strong {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  display: block;
+  margin-bottom: 1px;
+}
+
+.trust-item span {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+/* Contact Methods */
 .contact-methods {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 10px;
+  padding: 14px 18px;
+  background: #0F172A;
+  border: 1px solid #1E293B;
+  border-radius: var(--radius-md);
 }
 
 .method-item {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .method-item i {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.12);
   color: #38BDF8;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem;
+  font-size: 0.9375rem;
+  flex-shrink: 0;
 }
 
 .method-item strong {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.78125rem;
   color: #94A3B8;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .method-item a, .method-item span {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #FFFFFF;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .method-item a:hover {
@@ -1389,13 +1591,17 @@ img {
   text-decoration: underline;
 }
 
+/* Contact Form Box (Matches Height of Left Column) */
 .contact-form-box {
   background: #0F172A;
   color: #F8FAFC;
   border-radius: var(--radius-lg);
-  padding: 40px;
+  padding: 36px;
   border: 1px solid #1E293B;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .contact-form-box h3 {
@@ -1404,6 +1610,7 @@ img {
   color: #FFFFFF;
   margin-bottom: 4px;
 }
+
 
 .form-group label {
   display: block;
@@ -1602,49 +1809,8 @@ img {
    12. Responsive Media Queries
    ========================================================================== */
 @media (max-width: 1024px) {
-  /* Pricing Cards Mobile Re-Ordering:
-     1. 전사 HR 프로젝트 -> 2. 1-Day 진단 -> 3. 월 상시 HR 자문 */
-  .pricing-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 32px !important;
-    max-width: 480px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  .pricing-card.card-project {
-    order: 1 !important;
-  }
-  .pricing-card.card-diagnosis {
-    order: 2 !important;
-  }
-  .pricing-card.card-advisory {
-    order: 3 !important;
-  }
-  .pricing-card.featured {
-    transform: none !important;
-  }
-  .pricing-card.featured:hover {
-    transform: translateY(-4px) !important;
-  }
-  .plan-title, .plan-price, .plan-desc {
-    min-height: auto !important;
-  }
-
   .hero-title {
     font-size: 2.75rem;
-  }
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .pricing-card.featured {
-    transform: none;
-  }
-  .pricing-card.featured:hover {
-    transform: translateY(-6px);
   }
   .about-grid, .contact-wrapper {
     grid-template-columns: 1fr;
@@ -1790,7 +1956,7 @@ img {
   line-height: 1.5;
 }
 
-/* Special Service Card (평판조회 독립 분리) */
+/* Special Service Card (레퍼런스 체크 독립 분리) */
 .special-service-card {
   margin-top: 40px;
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
@@ -2476,3 +2642,129 @@ img {
   height: 48px;
   font-size: 1.35rem;
 }
+
+
+/* ==========================================================================
+   v13 Complete Brand, 4-Card Service Plans, and About Section Enhancements
+   ========================================================================== */
+
+/* 4-Cards Service Plans Grid */
+.pricing-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 40px;
+}
+
+.price-prefix {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #38BDF8;
+  margin-left: 4px;
+}
+
+/* Rounded Logo Pill badge matching image_a70fa2.png */
+.logo-pill {
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  padding: 2px 7px;
+  border-radius: 6px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
+/* Principles Roadmap Chips */
+.principles-roadmap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid #1E293B;
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  margin-top: 24px;
+}
+
+.roadmap-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.roadmap-step span {
+  font-size: 0.75rem;
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.roadmap-arrow {
+  color: #38BDF8;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* Responsive Overrides for 4-Card Service Plans */
+@media (min-width: 1160px) {
+  .pricing-grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 1159px) and (min-width: 769px) {
+  .pricing-container {
+    max-width: 900px !important;
+  }
+  .pricing-grid-4 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+  .pricing-card {
+    padding: 38px 24px 32px 24px !important;
+  }
+  .pricing-card.featured {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-grid-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    max-width: 440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .pricing-card.card-project {
+    order: 1 !important;
+  }
+  .pricing-card.card-diagnosis {
+    order: 2 !important;
+  }
+  .pricing-card.card-advisory {
+    order: 3 !important;
+  }
+  .pricing-card.card-refcheck {
+    order: 4 !important;
+  }
+  .pricing-card.featured {
+    transform: none !important;
+  }
+  .plan-title, .plan-price, .plan-desc {
+    min-height: auto !important;
+  }
+}
+
