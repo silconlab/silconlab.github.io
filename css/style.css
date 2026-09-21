@@ -1197,7 +1197,7 @@ img {
 }
 
 /* ==========================================================================
-   8. About SILCONLAB & Representative (Unified & Height Balanced)
+   8. About SILCONLAB & Representative (Unified, Legible & Height-Balanced)
    ========================================================================== */
 .about-section {
   padding: 100px 0;
@@ -1219,7 +1219,7 @@ img {
   height: 100%;
 }
 
-/* Unified Philosophy Callout (No blue stripe, identical executive styling) */
+/* 1. SILCON'S PHILOSOPHY Card */
 .growth-pain-callout {
   background: #0F172A;
   border: 1px solid #1E293B;
@@ -1256,19 +1256,19 @@ img {
 }
 
 .growth-pain-callout .callout-sub {
-  font-size: 0.875rem;
-  color: #94A3B8;
-  line-height: 1.6;
+  font-size: 0.9375rem;
+  color: #CBD5E1;
+  line-height: 1.65;
   word-break: keep-all;
   margin: 0;
 }
 
-/* CEO Profile Card (Matches top callout & stretches nicely) */
+/* 2. CEO Profile Card (Strong Visual Distinction & Highlights) */
 .ceo-profile-card {
   background: #0F172A;
   border: 1px solid #1E293B;
   border-radius: var(--radius-md);
-  padding: 28px;
+  padding: 28px 30px;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
   flex-grow: 1;
   display: flex;
@@ -1282,26 +1282,86 @@ img {
   transform: translateY(-2px);
 }
 
-.ceo-info h3 {
-  font-size: 1.3125rem;
+.ceo-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.ceo-name {
+  font-size: 1.375rem;
   font-weight: 800;
   color: #FFFFFF !important;
-  margin-bottom: 4px;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .ceo-title {
   font-size: 0.875rem;
   font-weight: 600;
   color: #38BDF8;
-  margin-left: 6px;
+}
+
+/* Eye-Catching '20년+ HR 실무 경력' Stat Badge */
+.ceo-exp-stat-badge {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.18) 0%, rgba(37, 99, 235, 0.22) 100%);
+  border: 1.5px solid #38BDF8;
+  border-radius: 8px;
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
+  flex-shrink: 0;
+}
+
+.ceo-exp-stat-badge .exp-num {
+  font-size: 1.1875rem;
+  font-weight: 900;
+  color: #38BDF8;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.ceo-exp-stat-badge .exp-text {
+  font-size: 0.78125rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 .ceo-desc {
-  font-size: 0.84375rem;
-  color: #94A3B8;
-  margin-bottom: 18px;
-  line-height: 1.55;
+  font-size: 0.9375rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  margin-bottom: 14px;
   word-break: keep-all;
+}
+
+/* Visual Distinction between Career & Track Record */
+.ceo-track-divider {
+  margin: 6px 0 14px 0;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+}
+
+.track-tag {
+  font-size: 0.78125rem;
+  font-weight: 800;
+  color: #38BDF8;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .ceo-highlights {
@@ -1311,13 +1371,13 @@ img {
 }
 
 .ceo-highlights li {
-  font-size: 0.84375rem;
+  font-size: 0.9375rem;
   color: #CBD5E1;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  line-height: 1.5;
+  line-height: 1.55;
   word-break: keep-all;
 }
 
@@ -1328,15 +1388,23 @@ img {
 .ceo-highlights li i {
   color: #38BDF8;
   margin-top: 3px;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   flex-shrink: 0;
+}
+
+/* Key scale & numbers highlighted with high contrast & cyan accent underline */
+.highlight-scale {
+  color: #FFFFFF;
+  font-weight: 800;
+  border-bottom: 1.5px solid rgba(56, 189, 248, 0.5);
+  padding-bottom: 1px;
 }
 
 .about-visual {
   height: 100%;
 }
 
-/* Right Card: SILCON 3대 원칙 (Stretches to match left column exactly) */
+/* 3. Right Card: SILCON 3대 차별화 원칙 */
 .philosophy-card {
   background: #0F172A !important;
   color: #FFFFFF !important;
@@ -1383,16 +1451,16 @@ img {
 
 .principle-item strong {
   display: block;
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   margin-bottom: 4px;
   color: #FFFFFF;
 }
 
 .principle-item p {
-  font-size: 0.84375rem;
-  color: #94A3B8;
-  line-height: 1.55;
+  font-size: 0.9375rem;
+  color: #CBD5E1;
+  line-height: 1.6;
   word-break: keep-all;
   margin: 0;
 }
@@ -1591,30 +1659,54 @@ img {
   text-decoration: underline;
 }
 
-/* Contact Form Box (Matches Height of Left Column) */
+/* Contact Form Box (Balanced Height with Left Column, Zero Overflow) */
 .contact-form-box {
   background: #0F172A;
   color: #F8FAFC;
   border-radius: var(--radius-lg);
-  padding: 36px;
+  padding: 32px 32px 28px 32px;
   border: 1px solid #1E293B;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   justify-content: space-between;
+  gap: 0;
+}
+
+.form-header-wrap {
+  margin-bottom: 12px;
 }
 
 .contact-form-box h3 {
-  font-size: 1.375rem;
+  font-size: 1.3125rem;
   font-weight: 800;
   color: #FFFFFF;
   margin-bottom: 4px;
 }
 
+.form-group {
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 0;
+}
 
 .form-group label {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.84375rem;
   font-weight: 700;
   color: #E2E8F0 !important;
   margin-bottom: 6px;
@@ -1624,14 +1716,21 @@ img {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 12px 14px;
+  padding: 11px 14px;
   font-family: inherit;
-  font-size: 0.9375rem;
+  font-size: 0.90625rem;
   border: 1px solid #334155 !important;
   border-radius: var(--radius-sm);
   background-color: #1E293B !important;
   color: #F8FAFC !important;
   transition: var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  min-height: 86px;
+  line-height: 1.55;
+  resize: none;
 }
 
 .form-group input::placeholder,
@@ -1648,59 +1747,27 @@ img {
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25) !important;
 }
 
+.form-submit-group {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-submit-group .btn-lg {
+  min-height: 48px;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 12px 20px;
+}
+
 .form-privacy {
-  font-size: 0.75rem;
+  font-size: 0.78125rem;
   color: #94A3B8 !important;
   text-align: center;
-  margin-top: 14px;
-}
-
-.form-group {
-  margin-bottom: 18px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--color-primary-light);
-  margin-bottom: 6px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 14px;
-  font-family: inherit;
-  font-size: 0.9375rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background-color: #1E293B;
-  transition: var(--transition-fast);
-  color: #F8FAFC;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--color-accent);
-  background-color: #0F172A;
-  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
-}
-
-.form-privacy {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  text-align: center;
-  margin-top: 12px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  line-height: 1.4;
 }
 
 /* ==========================================================================
