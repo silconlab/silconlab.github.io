@@ -1890,15 +1890,51 @@ img {
 }
 
 @media (max-width: 768px) {
+  /* 1. Mobile Header: Ample spacing, no collision between logo & CTA */
   .site-header {
-    padding: 14px 0;
+    padding: 10px 0 !important;
+  }
+  .header-container {
+    padding: 0 14px !important;
+  }
+  .brand-logo {
+    gap: 8px !important;
+  }
+  .brand-logo .logo-symbol {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .brand-logo .logo-symbol svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .logo-silcon {
+    font-size: 1.15rem !important;
+  }
+  .logo-pill {
+    font-size: 0.5625rem !important;
+    padding: 1px 5px !important;
+  }
+  .logo-sub {
+    font-size: 0.5rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .header-cta {
+    gap: 8px !important;
+  }
+  .header-cta .btn-kakao {
+    font-size: 0.75rem !important;
+    padding: 6px 10px !important;
+    gap: 5px !important;
+    border-radius: 6px !important;
   }
   .mobile-toggle {
-    display: flex;
+    display: flex !important;
+    padding: 4px !important;
   }
   .nav-menu {
     position: fixed;
-    top: 60px;
+    top: 54px;
     left: 0;
     width: 100%;
     background: rgba(15, 23, 42, 0.98);
@@ -1918,12 +1954,23 @@ img {
     align-items: flex-start;
     gap: 20px;
   }
+
+  /* 2. Titles: Natural word break without cutting Korean words */
+  .section-title, .hero-title, .contact-title, .plan-title {
+    word-break: keep-all !important;
+  }
+  .section-title {
+    font-size: 1.75rem !important;
+    line-height: 1.35 !important;
+  }
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2.125rem !important;
   }
   .hero-desc {
-    font-size: 1rem;
+    font-size: 0.9375rem !important;
   }
+
+  /* 3. Grid adaptations */
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1933,18 +1980,72 @@ img {
   .pain-grid, .services-grid, .cases-grid {
     grid-template-columns: 1fr;
   }
-  .form-row {
-    grid-template-columns: 1fr;
+
+  /* 4. Mobile Contact Form: Compact Single-Screen View (Fits in ~420px height) */
+  .contact-section {
+    padding: 40px 0 !important;
+  }
+  .contact-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
   }
   .contact-form-box {
-    padding: 24px;
+    padding: 18px 16px 16px 16px !important;
+    border-radius: var(--radius-md) !important;
+  }
+  .contact-form-box h3 {
+    font-size: 1.125rem !important;
+    margin-bottom: 6px !important;
+  }
+  .form-header-wrap {
+    margin-bottom: 8px !important;
+  }
+  .form-group {
+    margin-bottom: 8px !important;
+  }
+  .form-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    margin-bottom: 0 !important;
+  }
+  .form-group label {
+    font-size: 0.75rem !important;
+    margin-bottom: 3px !important;
+  }
+  .form-group input,
+  .form-group select {
+    padding: 7px 10px !important;
+    font-size: 0.8125rem !important;
+    min-height: 36px !important;
+    height: 36px !important;
+  }
+  .form-group textarea {
+    min-height: 46px !important;
+    height: 46px !important;
+    padding: 6px 10px !important;
+    font-size: 0.8125rem !important;
+  }
+  .form-submit-group {
+    margin-top: 4px !important;
+    gap: 6px !important;
+  }
+  .form-submit-group .btn-lg {
+    min-height: 40px !important;
+    font-size: 0.90625rem !important;
+    padding: 8px 14px !important;
+  }
+  .form-privacy {
+    font-size: 0.6875rem !important;
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
   }
   .floating-kakao {
-    bottom: 20px;
-    right: 20px;
-    width: 52px;
-    height: 52px;
-    font-size: 1.4rem;
+    bottom: 18px;
+    right: 18px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
   }
 }
 
